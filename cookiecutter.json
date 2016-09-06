@@ -1,0 +1,10 @@
+{
+    "author_full_name": "Your name",
+    "author_email": "Your address email (eq. you@example.com)",
+    "role_name": "Name of the project",
+    "role_description": "A short description of the role",
+    "release_year": "{% now 'local', '%Y' %}",
+    "version": "0.1.0",
+    "license": ["MIT", "BSD-3", "GPLv2", "GPLv3", "NoLicense"],
+    "_extensions": ["jinja2_time.TimeExtension"]
+}
