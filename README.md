@@ -1,7 +1,7 @@
 cookiecutter-ansible-role
 =========================
 
-A cookiecutter template for ansible role creation
+A cookiecutter template for ansible role generation
 
 Requirements
 ------------
@@ -9,7 +9,7 @@ Install `cookiecutter` command line: `pip install cookiecutter`
 
 Usage
 -----
-Generate a new Cookiecutter template layout: `cookiecutter gh:teddyphreak/cookiecutter-ansible-role`    
+Generate a new Cookiecutter template layout: `cookiecutter gh:teddyphreak/ansible-role`    
 
 License
 -------
