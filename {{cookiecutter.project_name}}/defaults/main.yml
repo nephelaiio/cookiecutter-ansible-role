@@ -1,2 +1,7 @@
 ---
-# defaults file for .
+- include: private.yml
+# User variables for role
+{{ cookiecutter.role_name }}_packages: {{ cookiecutter.role_name }}
+{{ cookiecutter.role_name }}_packages_state: 'installed'
+{{ cookiecutter.role_name }}_conf_template: {{ cookiecutter.role_name }}.conf
+# {{ cookiecutter.role_name }}_conf_path: /etc/{{ cookiecutter.role_name }}/{{ cookiecutter.role_name }}.conf

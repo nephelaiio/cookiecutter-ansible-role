@@ -1,11 +1,13 @@
 {
-    "full_name": "Ted Cook",
+    "author_name": "Ted Cook",
     "github_user": "teddyphreak",
     "galaxy_user": "{{ cookiecutter.github_user }}",
-    "role_name": "sample_role",
-    "role_short_description": "A short description of the project",
+    "role_name": "sample",
+    "role_short_description": "A sample role",
     "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
-    "release_date": "{% now 'local', '%Y' %}",
+    "package_install": true,
+    "package_config": true,
+    "release_year": "{% now 'local', '%Y' %}",
     "version": "0.1.0",
     "license": ["MIT", "GPLv2", "GPLv3", "BSD-3"],
     "_extensions": ["jinja2_time.TimeExtension"]
