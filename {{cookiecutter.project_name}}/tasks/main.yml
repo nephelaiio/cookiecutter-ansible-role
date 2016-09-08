@@ -13,7 +13,7 @@
 # Install packages
 {% if cookiecutter.package_install %}
 - name: install {{ cookiecutter.role_name }} packages
- package: name={{ '{{' }} item {{ '}}' }} state={{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}
+  package: name="{{ '{{' }} item {{ '}}' }}" state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
   with_items:
     - "{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}"
   become: yes
@@ -28,7 +28,7 @@
     src={{ cookiecutter.role_name }}_conf_template
     dest="{{ '{{' }} {{ cookiecutter.role_name }}_conf_path {{ '}}' }}"
   become: no
-	when: {{ cookiecutter.role_name }}_conf_path is defined
+  when: {{ cookiecutter.role_name }}_conf_path is defined
   tags:
     - {{ cookiecutter.role_name }}
     - {{ cookiecutter.role_name }}_conf
