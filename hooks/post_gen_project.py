@@ -8,6 +8,7 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 LICENSE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, 'licenses')
 TEST_DIRECTORY = os.path.join(PROJECT_DIRECTORY, 'tests')
 TEST_ROLE_DIRECTORY = os.path.join(TEST_DIRECTORY, 'roles')
+PROJECT_TEST_SYMLINK_PATH = os.path.join(TEST_ROLE_DIRECTORY, '{{ cookiecutter.role_name }}')
 
 if __name__ == '__main__':
     # configure selected license file and remove all other alternatives
@@ -17,9 +18,14 @@ if __name__ == '__main__':
     shutil.rmtree(LICENSE_DIRECTORY)
 
     # configure self reference for role testing (see https://www.ansible.com/blog/testing-ansible-roles-with-docker)
-    project_directory_relative = os.path.relpath(os.path.curdir, TEST_ROLE_DIRECTORY)
-    project_directory_relative = os.path.join(project_directory_relative, os.path.pardir, '{{ cookiecutter.project_name }}')
-    os.symlink(
-            project_directory_relative,
-            os.path.join(TEST_ROLE_DIRECTORY, '{{ cookiecutter.role_name }}'))
+    project_test_symlink_target = \
+            os.path.relpath(os.path.curdir, 
+                    TEST_ROLE_DIRECTORY)
+    project_test_symlink_target = \
+            os.path.join(project_test_symlink_target, 
+                    os.path.pardir, '{{ cookiecutter.project_name }}')
+    if not os.path.exists(TEST_ROLE_DIRECTORY): 
+        os.mkdir(TEST_ROLE_DIRECTORY)
+    if not os.path.exists(PROJECT_TEST_SYMLINK_PATH): 
+        os.symlink(project_test_symlink_target, PROJECT_TEST_SYMLINK_PATH)
 
