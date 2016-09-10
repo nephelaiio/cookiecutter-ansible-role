@@ -1,5 +1,4 @@
 ---
-- include: private.yml
 # User variables for role
 {{ cookiecutter.role_name }}_packages: {{ cookiecutter.role_name }}
 {{ cookiecutter.role_name }}_packages_state: 'installed'

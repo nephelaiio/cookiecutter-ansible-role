@@ -21,7 +21,7 @@
     - {{ cookiecutter.role_name }} 
 {% endif %}
 
-# Set up confiugration file
+# Set up configuration file
 {% if cookiecutter.package_config %}
 - name: configure {{ cookiecutter.role_name }}
   template: >
@@ -33,15 +33,3 @@
     - {{ cookiecutter.role_name }}
     - {{ cookiecutter.role_name }}_conf
 {% endif %}
-
-# Include distribution specific task definitions
-{% raw -%}
-- include: "{{ item }}"
-  with:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-    - "{{ ansible_distrubition }}.yml"
-    - "{{ ansible_os_family }}.yml"
-    - "default.yml"
-{%- endraw %}
-  tags:
-    - {{ cookiecutter.role_name }}
