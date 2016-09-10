@@ -6,7 +6,7 @@ from jinja2 import Environment, FileSystemLoader
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 LICENSE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, 'licenses')
-TEST_DIRECTORY = os.path.join(PROJECT_DIRECTORY, 'tests')
+TEST_DIRECTORY = PROJECT_DIRECTORY
 TEST_ROLE_DIRECTORY = os.path.join(TEST_DIRECTORY, 'roles')
 PROJECT_TEST_SYMLINK_PATH = os.path.join(TEST_ROLE_DIRECTORY, '{{ cookiecutter.role_name }}')
 
