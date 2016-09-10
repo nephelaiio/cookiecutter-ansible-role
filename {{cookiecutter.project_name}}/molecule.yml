@@ -1,0 +1,15 @@
+---
+driver:
+  name: docker
+
+docker:
+  containers:
+
+      - name: ansible-{{ cookiecutter.role_name }}-ubuntu
+        image: ubuntu
+        image_version: latest
+        ansible_groups:
+          - {{ cookiecutter.role_name }}
+
+verifier:
+  name: testinfra
