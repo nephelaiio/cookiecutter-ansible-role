@@ -1,7 +1,8 @@
 ---
 # Include variable definitions
 {% raw -%}
-- include_vars: "{{ item }}"
+- name: "include variable overrides"
+  include_vars: "{{ item }}"
   with_first_found:
     - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
     - "vars/{{ ansible_distrubition }}.yml"
@@ -11,7 +12,7 @@
     - {{ cookiecutter.role_name }}
 
 # Install packages
-{% if cookiecutter.package_install %}
+{% if cookiecutter.package_install -%}
 - name: install {{ cookiecutter.role_name }} packages
   package: name="{{ '{{' }} item {{ '}}' }}" state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
   with_items:
@@ -19,10 +20,10 @@
   become: yes
   tags:
     - {{ cookiecutter.role_name }} 
-{% endif %}
+{%- endif %}
 
 # Set up configuration file
-{% if cookiecutter.package_config %}
+{% if cookiecutter.package_config -%}
 - name: configure {{ cookiecutter.role_name }}
   template: >
     src={{ cookiecutter.role_name }}_conf_template
@@ -32,4 +33,4 @@
   tags:
     - {{ cookiecutter.role_name }}
     - {{ cookiecutter.role_name }}_conf
-{% endif %}
+{%- endif %}

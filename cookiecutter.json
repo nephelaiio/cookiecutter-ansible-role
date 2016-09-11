@@ -6,7 +6,7 @@
     "role_short_description": "A sample role",
     "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
     "package_install": true,
-    "package_config": true,
+    "package_config": false,
     "release_year": "{% now 'local', '%Y' %}",
     "version": "0.1.0",
     "license": ["MIT", "GPLv2", "GPLv3", "BSD-3"],
