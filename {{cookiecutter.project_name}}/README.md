@@ -42,10 +42,7 @@ You can test the role from sources using the command line using molecule directl
 ```
 molecule test
 ```
-Using tox 
-```
-tox
-```
+Please review the [documentation](http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations) in case you wish to add continuous integration for the role using [Travis CI](https://travis-ci.org)
 
 License
 -------

@@ -1,29 +1,22 @@
 ---
+# see http://molecule.readthedocs.io/en/stable-1.9/usage.html
 language: python
-python: "2.7"
 
-# Use the new container infrastructure
-sudo: false
+sudo: required
 
-# Install ansible
-addons:
-  apt:
-    packages:
-    - python-pip
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
 
 install:
   # Install ansible
-  - pip install ansible
-
-  # Check ansible version
-  - ansible --version
-
-  # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
+  - pip install ansible molecule
 
 script:
   # Basic role syntax check
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+  - cd {{ cookiecutter.project_name }}
+  - molecule test
 
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+# see http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations
+#notifications:
+#  webhooks: https://galaxy.ansible.com/api/v1/notifications/
