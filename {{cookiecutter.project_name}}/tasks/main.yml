@@ -14,9 +14,7 @@
 # Install packages
 {% if cookiecutter.package_install -%}
 - name: install {{ cookiecutter.role_name }} packages
-  package: name="{{ '{{' }} item {{ '}}' }}" state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
-  with_items:
-    - "{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}"
+  package: name="{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}" state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
   become: yes
   tags:
     - {{ cookiecutter.role_name }} 
