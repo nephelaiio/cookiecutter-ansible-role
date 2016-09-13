@@ -13,7 +13,7 @@ addons:
       - vagrant
 
 install:
-  - pip install ansible molecule
+  - pip install -r requirements.txt
 
 script:
   - molecule test
