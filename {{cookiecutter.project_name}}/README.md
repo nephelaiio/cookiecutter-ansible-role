@@ -6,7 +6,7 @@ An ansible role to install and configure {{ cookiecutter.role_name }}
 Requirements
 ------------
 
-Please make sure your environment has [docker](https://www.docker.com) installed in order to run role validation tests
+Please make sure your environment has [docker](https://www.docker.com) and [vagrant](https://www.vagrantup.com) installed in order to run role validation tests
 
 Role Variables
 --------------
