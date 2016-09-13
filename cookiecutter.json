@@ -1,9 +1,7 @@
 {
     "author_name": "Ted Cook",
-    "github_user": "teddyphreak",
-    "galaxy_user": "{{ cookiecutter.github_user }}",
     "role_name": "sample",
-    "role_short_description": "A sample role",
+    "role_short_description": "{{ 'An Ansible role to install and configure ' + cookiecutter.role_name }}" ,
     "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
     "package_install": true,
     "package_config": false,
