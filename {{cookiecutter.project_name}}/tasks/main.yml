@@ -12,7 +12,7 @@
     - {{ cookiecutter.role_name }}
 
 # Install packages
-{% if cookiecutter.package_install -%}
+{% if cookiecutter.package_install  == "yes" -%}
 - name: install {{ cookiecutter.role_name }} packages
   package: name="{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}" state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
   become: yes
@@ -21,7 +21,7 @@
 {%- endif %}
 
 # Set up configuration file
-{% if cookiecutter.package_config -%}
+{% if cookiecutter.package_config == "yes" -%}
 - name: configure {{ cookiecutter.role_name }}
   template: >
     src={{ cookiecutter.role_name }}_conf_template
@@ -31,4 +31,4 @@
   tags:
     - {{ cookiecutter.role_name }}
     - {{ cookiecutter.role_name }}_conf
-{%- endif %}
+{%- endif -%}
