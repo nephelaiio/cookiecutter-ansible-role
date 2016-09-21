@@ -19,5 +19,5 @@ script:
   - python travis.py tree
 
 # see http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations
-#notifications:
-#  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
