@@ -32,5 +32,8 @@ docker:
           - {{ cookiecutter.role_name }}-arch
         command: /bin/bash
 
+ansible:
+  requirements_file: dependencies.yml
+
 verifier:
   name: testinfra
