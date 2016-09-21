@@ -9,6 +9,7 @@ LICENSE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, 'licenses')
 TEST_DIRECTORY = PROJECT_DIRECTORY
 TEST_ROLE_DIRECTORY = os.path.join(TEST_DIRECTORY, 'roles')
 PROJECT_TEST_SYMLINK_PATH = os.path.join(TEST_ROLE_DIRECTORY, '{{ cookiecutter.role_name }}')
+FILES_DIRECTORY = os.path.join(PROJECT_DIRECTORY, 'files') 
 
 if __name__ == '__main__':
     # configure selected license file and remove all other alternatives
@@ -28,4 +29,12 @@ if __name__ == '__main__':
         os.mkdir(TEST_ROLE_DIRECTORY)
     if not os.path.exists(PROJECT_TEST_SYMLINK_PATH): 
         os.symlink(project_test_symlink_target, PROJECT_TEST_SYMLINK_PATH)
+
+    # generate files directory
+    os.mkdir(FILES_DIRECTORY)
+    if ('{{ cookiecutter.package_config }}' == 'yes'):
+        file_name = os.path.join(FILES_DIRECTORY, '{{ cookiecutter.role_name }}.conf')
+        config_file = open(file_name, 'w')
+        config_file.write('')
+        config_file.close()
 
