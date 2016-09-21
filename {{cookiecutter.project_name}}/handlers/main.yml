@@ -1,2 +1,7 @@
 ---
-# handlers file for .
+# handlers file for {{ cookiecutter.role_name }}
+- name: restart {{ cookiecutter.role_name }} services
+  service:
+    name={{ cookiecutter.role_name }}_service_name
+    state=restarted
+  become: yes

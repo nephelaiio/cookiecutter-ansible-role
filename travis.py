@@ -9,10 +9,11 @@ if __name__ == '__main__':
         print("A role name must be provided")
     else: 
         role_name=sys.argv[1]
+        project_name="ansible-role-{0}".format(role_name)
         cookiecutter(
                 '.', 
                 no_input=True, 
                 overwrite_if_exists=True,
-                extra_context={'role_name': role_name, 'project_name': role_name})
-        os.chdir(role_name)
+                extra_context={'role_name': role_name, 'project_name': project_name})
+        os.chdir(project_name)
         test = subprocess.call(["molecule", "test"])
