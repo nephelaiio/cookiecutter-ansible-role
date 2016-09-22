@@ -36,4 +36,4 @@ docker:
 #  requirements_file: dependencies.yml
 
 verifier:
-  name: testinfra
+  name: serverspec
