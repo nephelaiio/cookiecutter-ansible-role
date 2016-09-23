@@ -13,7 +13,9 @@
 
 # Install packages
 - name: install {{ cookiecutter.role_name }} packages
-  package: name="{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}" state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
+  package: >
+    name="{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}"
+    state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
   become: yes
   tags:
     - {{ cookiecutter.role_name }}
@@ -21,21 +23,21 @@
 # Set up configuration file
 - name: configure {{ cookiecutter.role_name }}
   template: >
-    src={{ cookiecutter.role_name }}_conf_template
+    src="{{ '{{' }} {{ cookiecutter.role_name }}_conf_template {{ '}}' }}"
     dest="{{ '{{' }} {{ cookiecutter.role_name }}_conf_path {{ '}}' }}"
   become: no
   when: {{ cookiecutter.role_name }}_conf_path is defined
   tags:
-    - {{ cookiecutter.role_name }}
-    - {{ cookiecutter.role_name }}_conf
+    - "{{ cookiecutter.role_name }}"
+    - "{{ cookiecutter.role_name }}_conf"
   notify:
     - restart {{ cookiecutter.role_name }}
 
 # Manage service
 - name: manage {{ cookiecutter.role_name }} services
-  service:
-    name={{ cookiecutter.role_name }}_service_name
-    state={{ cookiecutter.role_name }}_service_status
+  service: >
+    name="{{ '{{' }} {{ cookiecutter.role_name }}_service_name {{ '}}' }}"
+    state="{{ '{{' }} {{ cookiecutter.role_name }}_service_status {{ '}}' }}"
   become: yes
   when: {{ cookiecutter.role_name}}_service_name is defined
   tags:
