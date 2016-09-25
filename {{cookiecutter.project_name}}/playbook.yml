@@ -1,15 +1,15 @@
 ---
 - hosts: all
   pre_tasks:
-    - name: "installing which"
-      action: yum
-              name=which
+    - name: "installing testing packages"
+      action: package
+              name=which,wget
               state=installed
-      when: ansible_distribution == 'CentOS'
-    - name: "installing wget"
-      action: apt
+      when: ansible_os_family != 'Debian'
+    - name: "installing testing packages"
+      action: package
               name=wget
               state=installed
-      when: ansible_distribution == 'Debian'
+      when: ansible_os_family == 'Debian'
   roles:
     - role: {{ cookiecutter.role_name }}
