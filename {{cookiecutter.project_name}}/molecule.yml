@@ -8,22 +8,17 @@ docker:
         image: debian
         image_version: jessie
         ansible_groups:
-          - specs
+          - debian
       - name: ansible-{{ cookiecutter.role_name }}-xenial
         image: ubuntu
         image_version: xenial
         ansible_groups:
-          - specs
-      - name: ansible-{{ cookiecutter.role_name }}-centos6
-        image: centos
-        image_version: 6
-        ansible_groups:
-          - specs
+          - ubuntu
       - name: ansible-{{ cookiecutter.role_name }}-centos7
         image: centos
         image_version: 7
         ansible_groups:
-          - specs
+          - centos
       - name: ansible-{{ cookiecutter.role_name }}-arch
         image: pritunl/archlinux
         image_version: latest

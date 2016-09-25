@@ -35,10 +35,10 @@ Testing
 -------
 
 Role is tested against the following distributions (docker images):
-  * Ubuntu Xenial (ubuntu:xenial)
-  * CentOS 6 and CentOS 7 (centos:6, centos:7)
-  * Debian Jessie (debian:jessie)
-  * Arch Linux (pritunl/archlinux:latest)
+  * Ubuntu Xenial
+  * CentOS 7
+  * Debian Jessie
+  * Arch Linux
 
 You can test the role from sources using the command line using molecule directly
 ```
