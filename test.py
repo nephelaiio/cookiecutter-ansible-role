@@ -20,3 +20,4 @@ if __name__ == '__main__':
         os.chdir(project_name)
         test = subprocess.call(["molecule", "test"])
         shutil.rmtree(project_name, ignore_errors=True)
+        sys.exit(test)
