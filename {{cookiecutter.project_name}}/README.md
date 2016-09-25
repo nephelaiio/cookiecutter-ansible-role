@@ -1,7 +1,7 @@
 {{ cookiecutter.project_name }}
 =========
 
-[![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }}.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }}.svg?branch=master)
+[![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }}.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }})
 
 An [ansible role](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user}}/{{ cookiecutter.role_name }}) to install and configure {{ cookiecutter.role_name }}
 
