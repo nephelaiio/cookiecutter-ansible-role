@@ -1,5 +1,4 @@
 ---
-# see http://molecule.readthedocs.io/en/stable-1.9/usage.html
 language: python
 
 sudo: required
@@ -7,15 +6,12 @@ sudo: required
 services:
   - docker
 
-addons:
-  apt:
-    packages:
-      - vagrant
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
 
 install:
-  - pip install -r requirements.txt
-  - gem install bundler
-  - bundle install
+  - pip install molecule
 
 script:
   - molecule test

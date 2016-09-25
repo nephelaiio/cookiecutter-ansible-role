@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import os
+import shutil
 import subprocess
 from cookiecutter.main import cookiecutter
 
@@ -10,6 +11,7 @@ if __name__ == '__main__':
     else: 
         role_name=sys.argv[1]
         project_name="ansible-role-{0}".format(role_name)
+        shutil.rmtree(project_name, ignore_errors=True)
         cookiecutter(
                 '.', 
                 no_input=True, 
@@ -17,3 +19,4 @@ if __name__ == '__main__':
                 extra_context={'role_name': role_name, 'project_name': project_name})
         os.chdir(project_name)
         test = subprocess.call(["molecule", "test"])
+        shutil.rmtree(project_name, ignore_errors=True)

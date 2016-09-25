@@ -8,17 +8,17 @@ docker:
         image: debian
         image_version: jessie
         ansible_groups:
-          - debian
+          - test
       - name: ansible-{{ cookiecutter.role_name }}-xenial
         image: ubuntu
         image_version: xenial
         ansible_groups:
-          - ubuntu
+          - test
       - name: ansible-{{ cookiecutter.role_name }}-centos7
         image: centos
         image_version: 7
         ansible_groups:
-          - centos
+          - test
       - name: ansible-{{ cookiecutter.role_name }}-arch
         image: pritunl/archlinux
         image_version: latest
@@ -29,4 +29,4 @@ docker:
 #  requirements_file: dependencies.yml
 
 verifier:
-  name: serverspec
+  name: testinfra
