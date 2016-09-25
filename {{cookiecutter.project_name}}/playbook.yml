@@ -3,12 +3,12 @@
   pre_tasks:
     - name: "installing testing packages"
       action: package
-              name=which,wget,python
+              name=which,wget
               state=installed
       when: ansible_os_family != 'Debian'
     - name: "installing testing packages"
       action: package
-              name=wget,python
+              name=wget
               state=installed
       when: ansible_os_family == 'Debian'
   roles:
