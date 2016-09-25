@@ -1,12 +1,14 @@
-Role Name
+{{ cookiecutter.project_name }}
 =========
 
-An ansible role to install and configure {{ cookiecutter.role_name }}
+[![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }}.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }}.svg?branch=master)
+
+An [ansible role](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user}}/{{ cookiecutter.role_name }}) to install and configure {{ cookiecutter.role_name }}
 
 Requirements
 ------------
 
-Please make sure your environment has [docker](https://www.docker.com) and [vagrant](https://www.vagrantup.com) installed in order to run role validation tests
+Please make sure your environment has [docker](https://www.docker.com) and [vagrant](https://www.vagrantup.com) installed in order to run role validation tests. Additional dependencies are listed 
 
 Role Variables
 --------------
@@ -42,7 +44,7 @@ You can test the role from sources using the command line using molecule directl
 ```
 molecule test
 ```
-Please review the [documentation](http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations) in case you wish to add continuous integration for the role using [Travis CI](https://travis-ci.org)
+Please review the [documentation](http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations) in order to add continuous integration for the role using [Travis CI](https://travis-ci.org). Role configuration is provided in the [Travis-CI configuration file](/travis.yml)
 
 License
 -------

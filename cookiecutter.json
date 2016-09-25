@@ -1,7 +1,9 @@
 {
     "author_name": "Ted Cook",
+    "galaxy_user": "nephelaiio",
+    "travis_user": "nephelaiio",
     "role_name": "sample",
-    "role_short_description": "{{ 'An Ansible role to install and configure ' + cookiecutter.role_name }}" ,
+    "role_short_description": "{{ 'An Ansible role to install and configure ' + cookiecutter.role_name }}",
     "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
     "release_year": "{% now 'local', '%Y' %}",
     "version": "0.1.0",
