@@ -8,28 +8,26 @@ docker:
         image: debian
         image_version: jessie
         ansible_groups:
-          - {{ cookiecutter.role_name }}-debian
+          - default
       - name: ansible-{{ cookiecutter.role_name }}-xenial
         image: ubuntu
         image_version: xenial
         ansible_groups:
-          - {{ cookiecutter.role_name }}-ubuntu
+          - default
       - name: ansible-{{ cookiecutter.role_name }}-centos6
         image: centos
         image_version: 6
         ansible_groups:
-          - {{ cookiecutter.role_name }}-centos
+          - default
       - name: ansible-{{ cookiecutter.role_name }}-centos7
         image: centos
         image_version: 7
         ansible_groups:
-          - {{ cookiecutter.role_name }}-centos
+          - default
       - name: ansible-{{ cookiecutter.role_name }}-arch
         image: pritunl/archlinux
         image_version: latest
         dockerfile: docker/arch.dockerfile
-        ansible_groups:
-          - {{ cookiecutter.role_name }}-arch
         command: /bin/bash
 
 #ansible:
