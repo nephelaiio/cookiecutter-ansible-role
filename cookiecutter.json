@@ -6,7 +6,6 @@
     "role_short_description": "{{ 'An Ansible role to install and configure ' + cookiecutter.role_name }}",
     "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
     "release_year": "{% now 'local', '%Y' %}",
-    "version": "0.1.0",
     "license": ["MIT", "GPLv2", "GPLv3", "BSD-3"],
     "_extensions": ["jinja2_time.TimeExtension"]
 }
