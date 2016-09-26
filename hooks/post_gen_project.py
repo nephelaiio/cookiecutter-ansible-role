@@ -18,13 +18,7 @@ if __name__ == '__main__':
     shutil.rmtree(LICENSE_DIRECTORY)
 
     # configure self reference for role testing (see https://www.ansible.com/blog/testing-ansible-roles-with-docker)
-    project_test_symlink_target = \
-            os.path.relpath(os.path.curdir, 
-                    TEST_ROLE_DIRECTORY)
-    project_test_symlink_target = \
-            os.path.join(project_test_symlink_target, 
-                    os.path.pardir, '{{ cookiecutter.project_name }}')
     if not os.path.exists(TEST_ROLE_DIRECTORY): 
         os.mkdir(TEST_ROLE_DIRECTORY)
     if not os.path.exists(PROJECT_TEST_SYMLINK_PATH): 
-        os.symlink(project_test_symlink_target, PROJECT_TEST_SYMLINK_PATH)
+        os.symlink('.././', PROJECT_TEST_SYMLINK_PATH)

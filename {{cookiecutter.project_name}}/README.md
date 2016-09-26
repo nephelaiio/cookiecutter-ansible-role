@@ -1,4 +1,4 @@
-{{ cookiecutter.project_name }}
+{{ cookiecutter.galaxy_user }}.{{ cookiecutter.role_name }}
 =========
 
 [![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }}.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }})
@@ -8,13 +8,12 @@ An [ansible role](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user}}/{{ co
 Requirements
 ------------
 
-Please make sure your environment has [docker](https://www.docker.com) and [vagrant](https://www.vagrantup.com) installed in order to run role validation tests. Additional dependencies are listed 
+Please make sure your environment has [docker](https://www.docker.com) installed in order to run role validation tests. Additional python dependencies are listed in the [requirements file](/requirements.txt)
 
 Role Variables
 --------------
 
 Please refer to the [defaults file](/defaults/main.yml) for an up to date list of input parameters.
-An additional list of reserved parameters is [available](/defaults/reserved.yml); overriding these is strongly discouraged.
 
 Dependencies
 ------------
