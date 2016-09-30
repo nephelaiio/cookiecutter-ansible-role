@@ -4,9 +4,9 @@ cookiecutter-ansible-role
 
 A cookiecutter template for ansible role generation
 
-Requirements
-------------
-Your environment must comply with the following requirements in order to successfully generate and use a new role:
+Test Requirements
+-----------------
+Your environment must comply with the following requirements in order to successfully test the cookiecutter
   * You must be running under Linux
   * Use a python2 interpreter or virtualenv
   * Have docker installed
@@ -20,14 +20,11 @@ mkvirtualenv ansible -p /usr/bin/python2
 pip install cookiecutter docker-py
 ```
 
-Docker images for Ubuntu, CentOS and Arch will be automatically registered on your system if required.
-
 Usage
 -----
 You may use the following procedure as a guide for creating an ansible role in the current directory
 ```
 cookiecutter gh:nephelaiio/ansible-role .
-pip install -r requirements.txt
 ```
 
 License
