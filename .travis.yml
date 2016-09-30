@@ -11,7 +11,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - pytest
+  - pytest -s
 
 # see http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations
 notifications:
