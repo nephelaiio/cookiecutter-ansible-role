@@ -1,8 +1,13 @@
 ---
 # User variables for role
 {{ cookiecutter.role_name }}_packages: {{ cookiecutter.role_name }}
+
 {{ cookiecutter.role_name }}_packages_state: present
+
 #{{ cookiecutter.role_name }}_conf_template: {{ cookiecutter.role_name }}.conf
+
 #{{ cookiecutter.role_name }}_conf_path: /etc/{{ cookiecutter.role_name }}/{{ cookiecutter.role_name }}.conf
+
 #{{ cookiecutter.role_name }}_service_name: {{ cookiecutter.role_name }}
+
 #{{ cookiecutter.role_name }}_service_status: started
