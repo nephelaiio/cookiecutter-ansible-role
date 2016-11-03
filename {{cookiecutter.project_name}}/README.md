@@ -18,9 +18,9 @@ By default this role does not depend on any external roles. If any such dependen
 Example Playbook
 ----------------
 
-    - hosts: servers
-      roles:
-         - { role: {{ cookiecutter.role_name }}, {{ cookiecutter.role_name }}_packages_state: latest }
+- hosts: servers
+  roles:
+     - { role: {{ cookiecutter.role_name }}, {{ cookiecutter.role_name }}_packages_state: latest }
 
 
 Testing
