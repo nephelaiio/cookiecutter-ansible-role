@@ -27,6 +27,12 @@ docker:
         ansible_groups:
           - test
 
+molecule:
+  ignore_paths:
+    - .git
+    - .ropeproject
+    - .molecule
+
 #dependency:
 #    requirements_file: dependencies.yml
 #    name: galaxy
