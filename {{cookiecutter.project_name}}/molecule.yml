@@ -1,31 +1,32 @@
+# vim: ts=2 sw=2 et :
 ---
 driver:
   name: docker
 
 docker:
   containers:
-      - name: ansible-{{ cookiecutter.role_name }}-jessie
-        image: debian
-        image_version: jessie
-        ansible_groups:
-          - test
-      - name: ansible-{{ cookiecutter.role_name }}-xenial
-        image: ubuntu
-        image_version: xenial
-        ansible_groups:
-          - test
-      - name: ansible-{{ cookiecutter.role_name }}-centos7
-        image: centos
-        image_version: 7
-        ansible_groups:
-          - test
-      - name: ansible-{{ cookiecutter.role_name }}-arch
-        image: pritunl/archlinux
-        image_version: latest
-        dockerfile: docker/arch.dockerfile
-        command: /bin/bash
-        ansible_groups:
-          - test
+    - name: ansible-{{ cookiecutter.role_name }}-jessie
+      image: debian
+      image_version: jessie
+      ansible_groups:
+        - test
+    - name: ansible-{{ cookiecutter.role_name }}-xenial
+      image: ubuntu
+      image_version: xenial
+      ansible_groups:
+        - test
+    - name: ansible-{{ cookiecutter.role_name }}-centos7
+      image: centos
+      image_version: 7
+      ansible_groups:
+        - test
+    - name: ansible-{{ cookiecutter.role_name }}-arch
+      image: pritunl/archlinux
+      image_version: latest
+      dockerfile: docker/arch.dockerfile
+      command: /bin/bash
+      ansible_groups:
+        - test
 
 molecule:
   ignore_paths:
@@ -34,8 +35,10 @@ molecule:
     - .molecule
 
 #dependency:
-#    requirements_file: dependencies.yml
-#    name: galaxy
+#  requirements_file: dependencies.yml
+#  name: galaxy
 
 verifier:
   name: testinfra
+  options:
+    ignore: roles
