@@ -1,3 +1,4 @@
+# vim: sw=2 ts=2 et :
 ---
 # handlers file for {{ cookiecutter.role_name }}
 - name: restart {{ cookiecutter.role_name }} services

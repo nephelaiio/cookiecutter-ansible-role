@@ -1,3 +1,5 @@
+# vim: ts=2 sw=2 et :
+---
 galaxy_info:
   author: {{ cookiecutter.author_name }}
   description: {{ cookiecutter.role_short_description }}
