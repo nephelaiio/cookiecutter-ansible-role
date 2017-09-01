@@ -1,0 +1,10 @@
+---
+# - name: restart {{ cookiecutter.role_name }}
+#   service:
+#     name: "{{ '{{' }} {{ cookiecutter.role_name }}_service_name {{ '}}' }}"
+#     state: restarted
+#   become: "yes"
+#   when: {{ cookiecutter.role_name}}_service_name is defined
+#   tags:
+#     - {{ cookiecutter.role_name }}
+#     - {{ cookiecutter.role_name }}_service

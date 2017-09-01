@@ -1,4 +1,5 @@
 ---
+{% raw -%}
 - name: Create
   hosts: localhost
   connection: local
@@ -45,3 +46,4 @@
         volumes: "{{ item.volumes | default(omit) }}"
         capabilities: "{{ item.capabilities | default(omit) }}"
       with_items: "{{ molecule_yml.platforms }}"
+{%- endraw %}

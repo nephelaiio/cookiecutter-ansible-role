@@ -1,50 +1,46 @@
-# vim: ts=2 sw=2 et :
 ---
-# Include variable definitions
 {% raw -%}
 - name: "include variable overrides"
   include_vars: "{{ item }}"
   with_first_found:
     - files:
-      - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-      - "vars/{{ ansible_distribution }}.yml"
-      - "vars/{{ ansible_os_family }}.yml"
+        - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+        - "vars/{{ ansible_distribution }}.yml"
+        - "vars/{{ ansible_os_family }}.yml"
       skip: true
 {%- endraw %}
   tags:
     - {{ cookiecutter.role_name }}
 
-# Install packages
 - name: install {{ cookiecutter.role_name }} packages
-  package: >
-    name="{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}"
-    state="{{ '{{' }} {{ cookiecutter.role_name}}_packages_state {{ '}}' }}"
-  become: yes
+  package:
+{%- raw %}
+    name: "{{ item }}"
+{%- endraw %}
+    state: "{{ '{{' }} {{ cookiecutter.role_name }}_packages_state {{ '}}' }}"
+  become: "yes"
+  with_items: "{{ '{{' }} {{ cookiecutter.role_name }}_packages {{ '}}' }}"
   tags:
     - {{ cookiecutter.role_name }}
 
-# Set up configuration file
-- name: configure {{ cookiecutter.role_name }}
-  template: >
-    src="{{ '{{' }} {{ cookiecutter.role_name }}_conf_template {{ '}}' }}"
-    dest="{{ '{{' }} {{ cookiecutter.role_name }}_conf_path {{ '}}' }}"
-  become: no
-  when: {{ cookiecutter.role_name }}_conf_path is defined
-  tags:
-    - "{{ cookiecutter.role_name }}"
-    - "{{ cookiecutter.role_name }}_conf"
-  notify:
-    - restart {{ cookiecutter.role_name }}
-
-# Manage service
-- name: manage {{ cookiecutter.role_name }} services
-  service: >
-    name="{{ '{{' }} {{ cookiecutter.role_name }}_service_name {{ '}}' }}"
-    state="{{ '{{' }} {{ cookiecutter.role_name }}_service_status {{ '}}' }}"
-  become: yes
-  when: {{ cookiecutter.role_name}}_service_name is defined
-  tags:
-    - {{ cookiecutter.role_name }}
-    - {{ cookiecutter.role_name }}_service
-  notify:
-    - restart {{ cookiecutter.role_name }}
+# - name: configure {{ cookiecutter.role_name }}
+#   template:
+#     src: "{{ '{{' }} {{ cookiecutter.role_name }}_conf_template {{ '}}' }}"
+#     dest: "{{ '{{' }} {{ cookiecutter.role_name }}_conf_path {{ '}}' }}"
+#   become: no
+#   when: {{ cookiecutter.role_name }}_conf_path is defined
+#   tags:
+#     - "{{ cookiecutter.role_name }}"
+#   notify:
+#     - restart {{ cookiecutter.role_name }}
+#
+# - name: manage {{ cookiecutter.role_name }} services
+#   service:
+#     name: "{{ '{{' }} {{ cookiecutter.role_name }}_service_name {{ '}}' }}"
+#     state: "{{ '{{' }} {{ cookiecutter.role_name }}_service_status {{ '}}' }}"
+#   become: "yes"
+#   when: {{ cookiecutter.role_name}}_service_name is defined
+#   tags:
+#     - {{ cookiecutter.role_name }}
+#   notify:
+#     - restart {{ cookiecutter.role_name }}
