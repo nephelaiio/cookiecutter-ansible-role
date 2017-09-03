@@ -15,7 +15,9 @@ ENV LC_ALL en_US.UTF-8
 ENV LC_CTYPE en_US.UTF-8
 ENV container docker
 
+{% raw -%}
 {% if item.name == 'ubuntu' or item.name == 'centos' %}
+{%- endraw %}
 
 RUN find /etc/systemd/system \
   /lib/systemd/system \
@@ -29,7 +31,9 @@ RUN systemctl set-default multi-user.target
 
 STOPSIGNAL SIGRTMIN+3
 
+{% raw -%}
 {% elif item.name == 'arch' %}
+{%- endraw %}
 
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
   rm -f /lib/systemd/system/multi-user.target.wants/*;\
@@ -40,6 +44,8 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
   rm -f /lib/systemd/system/basic.target.wants/*;\
   rm -f /lib/systemd/system/anaconda.target.wants/*;
 
+{% raw -%}
 {% endif %}
+{%- endraw %}
 
 VOLUME [ “/sys/fs/cgroup” ]
