@@ -32,8 +32,6 @@ Role is tested against the following distributions (docker images):
 
 You can test the role directly from sources using command ` molecule test `
 
-Role configuration for Travis CI is provided in the [CI configuration file](/.travis.yml). Please review the [documentation](http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations) in order to add continuous delivery for the role into galaxy.
-
 ## License
 
 This project is licensed under the terms of the [{{ cookiecutter.license }} License](/LICENSE)
