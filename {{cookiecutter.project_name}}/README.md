@@ -17,7 +17,7 @@ By default this role does not depend on any external roles. If any such dependen
 - hosts: servers
   roles:
      - role: {{ cookiecutter.role_name }}
-       {{ cookiecutter.role_name }}_packages_state: latest
+       {{ cookiecutter.role_name | replace('-', '_') }}_packages_state: latest
 
 
 ## Testing
