@@ -1,6 +1,7 @@
 # {{ cookiecutter.galaxy_user }}.{{ cookiecutter.role_name }}
 
 [![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }}.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }})
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-systemd--service-blue.svg)](https://galaxy.ansible.com/{{ cookicutter.galaxy_user }}/{{ cookiecutter.role_name }}/)
 
 An [ansible role](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user}}/{{ cookiecutter.role_name }}) to install and configure {{ cookiecutter.role_name }}
 
