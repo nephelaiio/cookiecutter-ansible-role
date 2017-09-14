@@ -1,7 +1,9 @@
 ---
 # - name: restart {{ cookiecutter.role_name }}
+#   become: yes
 #   service:
-#     name: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_name {{ '}}' }}"
+{%- raw %}
+#     name: "{{ item }}"
+{%- endraw %}
 #     state: restarted
-#   become: "yes"
-#   when: {{ cookiecutter.role_name | replace('-', '_') }}_service_name is defined
+#   with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_names {{ '}}' }}"

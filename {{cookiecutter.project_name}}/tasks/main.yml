@@ -13,34 +13,27 @@
     - {{ cookiecutter.role_name }}
 
 - name: install {{ cookiecutter.role_name }} packages
+  become: yes
   package:
 {%- raw %}
     name: "{{ item }}"
 {%- endraw %}
-    state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_packages_state {{ '}}' }}"
-  become: "yes"
-  with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_packages {{ '}}' }}"
-  tags:
-    - {{ cookiecutter.role_name }}
+    state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_state {{ '}}' }}"
+  with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_names {{ '}}' }}"
 
 # - name: configure {{ cookiecutter.role_name }}
+#   become: yes
 #   template:
 #     src: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_conf_template {{ '}}' }}"
 #     dest: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_conf_path {{ '}}' }}"
-#   become: no
-#   when: {{ cookiecutter.role_name | replace('-', '_') }}_conf_path is defined
-#   tags:
-#     - "{{ cookiecutter.role_name }}"
 #   notify:
 #     - restart {{ cookiecutter.role_name }}
 #
 # - name: manage {{ cookiecutter.role_name }} services
+#   become: yes
 #   service:
-#     name: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_name {{ '}}' }}"
+{%- raw %}
+#     name: "{{ item }}"
+{%- endraw %}
 #     state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_status {{ '}}' }}"
-#   become: "yes"
-#   when: {{ cookiecutter.role_name | replace('-', '_') }}_service_name is defined
-#   tags:
-#     - {{ cookiecutter.role_name }}
-#   notify:
-#     - restart {{ cookiecutter.role_name }}
+#   with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_names {{ '}}' }}"
