@@ -17,7 +17,7 @@ By default this role does not depend on any external roles. If any such dependen
 
 - hosts: servers
   roles:
-     - role: {{ cookiecutter.role_name }}
+     - role: {{ cookiecutter.galaxy_user }}.{{ cookiecutter.role_name }}
        {{ cookiecutter.role_name | replace('-', '_') }}_package_state: latest
 
 
