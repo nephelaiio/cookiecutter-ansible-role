@@ -23,7 +23,7 @@ By default this role does not depend on any external roles. If any such dependen
 
 ## Testing
 
-Please make sure your environment has [docker](https://www.docker.com) installed in order to run role validation tests. Additional python dependencies are listed in the [requirements file](/requirements.txt)
+Please make sure your environment has [docker](https://www.docker.com) installed in order to run role validation tests. Additional python dependencies are listed in the [requirements file](https://github.com/nephelaiio/ansible-role-requirements/blob/master/requirements.txt)
 
 Role is tested against the following distributions (docker images):
   * Ubuntu Xenial

@@ -9,11 +9,7 @@ services:
   - docker
 
 install:
-  - pip install -r requirements.txt
+  - pip install -r https://raw.githubusercontent.com/nephelaiio/ansible-role-requirements/master/requirements.txt
 
 script:
   - pytest -s
-
-# see http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
