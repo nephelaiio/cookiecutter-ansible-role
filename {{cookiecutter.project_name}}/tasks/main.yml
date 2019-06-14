@@ -7,7 +7,7 @@
         - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
         - "vars/{{ ansible_distribution }}.yml"
         - "vars/{{ ansible_os_family }}.yml"
-      skip: true
+        - "vars/main.yml"
 {%- endraw %}
   tags:
     - {{ cookiecutter.role_name }}
@@ -16,10 +16,9 @@
   become: yes
   package:
 {%- raw %}
-    name: "{{ item }}"
+    name: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_names {{ '}}' }}"
 {%- endraw %}
     state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_state {{ '}}' }}"
-  with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_names {{ '}}' }}"
 
 # - name: configure {{ cookiecutter.role_name }}
 #   become: yes
