@@ -15,9 +15,7 @@
 - name: install {{ cookiecutter.role_name }} packages
   become: yes
   package:
-{%- raw %}
     name: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_names {{ '}}' }}"
-{%- endraw %}
     state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_state {{ '}}' }}"
 
 # - name: configure {{ cookiecutter.role_name }}
