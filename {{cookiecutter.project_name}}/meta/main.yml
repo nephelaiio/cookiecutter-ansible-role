@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: {{ cookiecutter.role_name | replace('-', '_') }}
   author: {{ cookiecutter.author_name }}
   description: {{ cookiecutter.role_short_description }}
   license: {{ cookiecutter.license }}
@@ -17,7 +18,6 @@ galaxy_info:
     - name: Debian
       versions:
         - stretch
-  galaxy_tags:
-    - {{ cookiecutter.role_name }}
+  galaxy_tags: {{ cookiecutter.role_name.split('-') }}
 
 dependencies: []
