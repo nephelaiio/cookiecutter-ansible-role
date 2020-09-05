@@ -10,11 +10,9 @@
       - "vars/{{ ansible_os_family | lower }}.yml"
       - "vars/default.yml"
   loop: "{{ q('first_found', params, skip=True) }}"
-  tags:
-    - always
 {%- endraw %}
   tags:
-    - {{ cookiecutter.role_name }}
+    - always
 
 - name: install {{ cookiecutter.role_name }} packages
   become: yes
