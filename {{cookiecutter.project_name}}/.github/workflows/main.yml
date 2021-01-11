@@ -38,7 +38,7 @@ jobs:
           ansible-lint .
 
   molecule:
-    name: Pytest
+    name: Molecule
     runs-on: ubuntu-latest
     strategy:
       matrix:
