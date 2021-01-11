@@ -28,11 +28,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Debug pip version
-        run: pip --version
-
-      - name: Install test dependencies.
-        run: pip install ansible molecule[docker] docker pytest pytest-testinfra
+      - name: Install pip
+        run: |
+          python -m pip install --upgrade pip
+          pip install ansible molecule[docker] docker pytest pytest-testinfra
 
       - name: Run Pytest
         run: pytest -s
