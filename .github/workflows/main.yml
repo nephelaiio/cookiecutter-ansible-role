@@ -31,7 +31,7 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install ansible molecule[docker] docker pytest pytest-testinfra
 
-      - name: Run Molecule tests.
+      - name: Run Pytest
         run: pytest -s
         env:
           PY_COLORS: '1'
