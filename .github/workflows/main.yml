@@ -13,6 +13,7 @@ defaults:
   run:
     working-directory: cookiecutter-ansible-role
 
+jobs:
   pytest:
     name: Pytest
     runs-on: ubuntu-latest
