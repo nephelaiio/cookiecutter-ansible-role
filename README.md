@@ -8,7 +8,7 @@ Test Requirements
 -----------------
 Your environment must comply with the following requirements in order to successfully test the cookiecutter
   * You must be running under Linux
-  * Use a python2 interpreter or virtualenv
+  * Use a python interpreter or virtualenv
   * Have docker installed
   * Install `cookiecutter` package. E.g. `pip install cookiecutter`.
   * Install `docker-py` package. E.g. `pip install docker-py`.

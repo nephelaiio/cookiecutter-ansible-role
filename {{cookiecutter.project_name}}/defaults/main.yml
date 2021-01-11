@@ -1,20 +1,6 @@
 ---
-{{ cookiecutter.role_name | replace('-', '_') }}_packages:
-  - {{ cookiecutter.role_name }}
+_{{ cookiecutter.role_name | replace('-', '_') }}_package_default:
+  default:
+    - {{ cookiecutter.role_name }}
 
-{{ cookiecutter.role_name | replace('-', '_') }}_package_names: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_packages {{ '}}' }}"
-
-{{ cookiecutter.role_name | replace('-', '_') }}_packages_state: present
-
-{{ cookiecutter.role_name | replace('-', '_') }}_package_state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_packages_state {{ '}}' }}"
-
-# {{ cookiecutter.role_name | replace('-', '_') }}_conf_template: {{ cookiecutter.role_name }}.conf
-
-# {{ cookiecutter.role_name | replace('-', '_') }}_conf_path: /etc/{{ cookiecutter.role_name }}/{{ cookiecutter.role_name }}.conf
-
-# {{ cookiecutter.role_name | replace('-', '_') }}_service_names:
-#   - {{ cookiecutter.role_name }}
-
-# {{ cookiecutter.role_name | replace('-', '_') }}_service_status: started
-
-# {{ cookiecutter.role_name | replace('-', '_') }}_service_enabled: yes
+{{ cookiecutter.role_name | replace('-', '_') }}_state: present

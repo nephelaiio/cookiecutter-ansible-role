@@ -1,4 +1,4 @@
 *.swp
 **/.cache
 **/__pycache__
-ansible-role-*
+nephelaiio.*

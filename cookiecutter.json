@@ -1,10 +1,11 @@
 {
     "author_name": "Ted Cook",
     "galaxy_user": "nephelaiio",
-    "travis_user": "nephelaiio",
+    "github_user": "nephelaiio",
     "role_name": "sample",
     "role_short_description": "{{ 'An Ansible role to install and configure ' + cookiecutter.role_name }}",
-    "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
+    "project_name": "{{ cookiecutter.galaxy_user }}.{{ cookiecutter.role_name }}",
+    "github_name": "ansible-role-{{ cookiecutter.role_name }}",
     "release_year": "{% now 'local', '%Y' %}",
     "license": ["MIT", "GPLv2", "GPLv3", "BSD-3"],
     "_extensions": ["jinja2_time.TimeExtension"]

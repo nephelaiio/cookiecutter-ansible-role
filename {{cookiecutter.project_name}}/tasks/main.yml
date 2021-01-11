@@ -1,38 +1,21 @@
 ---
-{% raw -%}
 - name: include variable overrides
-  include_vars: "{{ item }}"
+  set_fact:
+    _{{ cookiecutter.role_name | replace('-', '_') }}_package: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package | default(_{{ cookiecutter.role_name | replace('-', '_') }}_package_default | sorted_get(overrides)) {{ '}}' }}"
+{%- raw %}
   vars:
-    params:
-      - "vars/{{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }}.yml"
-      - "vars/{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version }}.yml"
-      - "vars/{{ ansible_distribution | lower }}.yml"
-      - "vars/{{ ansible_os_family | lower }}.yml"
-      - "vars/default.yml"
-  loop: "{{ q('first_found', params, skip=True) }}"
+    overrides:
+      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }}"
+      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version }}"
+      - "{{ ansible_distribution | lower }}"
+      - "{{ ansible_os_family | lower }}"
+      - "default"
 {%- endraw %}
   tags:
     - always
 
-- name: install {{ cookiecutter.role_name }} packages
+- name: install {{ cookiecutter.role_name }} package
   become: yes
   package:
-    name: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_names {{ '}}' }}"
-    state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_state {{ '}}' }}"
-
-# - name: configure {{ cookiecutter.role_name }}
-#   become: yes
-#   template:
-#     src: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_conf_template {{ '}}' }}"
-#     dest: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_conf_path {{ '}}' }}"
-#   notify:
-#     - restart {{ cookiecutter.role_name }}
-#
-# - name: manage {{ cookiecutter.role_name }} services
-#   become: yes
-#   service:
-{%- raw %}
-#     name: "{{ item }}"
-{%- endraw %}
-#     state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_status {{ '}}' }}"
-#   with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_names {{ '}}' }}"
+    name: "{{ '{{' }} _{{ cookiecutter.role_name | replace('-', '_') }}_package {{ '}}' }}"
+    state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_state {{ '}}' }}"

@@ -1,9 +1,1 @@
 ---
-# - name: restart {{ cookiecutter.role_name }}
-#   become: yes
-#   service:
-{%- raw %}
-#     name: "{{ item }}"
-{%- endraw %}
-#     state: restarted
-#   with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_names {{ '}}' }}"

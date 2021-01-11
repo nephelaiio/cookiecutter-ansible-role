@@ -5,13 +5,6 @@ import shutil
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 LICENSE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, 'licenses')
-TEST_DIRECTORY = PROJECT_DIRECTORY
-TEST_ROLE_DIRECTORY = os.path.join(TEST_DIRECTORY,
-                                   'molecule',
-                                   'default',
-                                   'roles')
-PROJECT_TEST_SYMLINK_PATH = os.path.join(TEST_ROLE_DIRECTORY,
-                                         '{{ cookiecutter.role_name }}')
 
 if __name__ == '__main__':
     # configure selected license file and remove all other alternatives
@@ -19,10 +12,3 @@ if __name__ == '__main__':
             os.path.join(LICENSE_DIRECTORY, '{{ cookiecutter.license }}'),
             os.path.join(PROJECT_DIRECTORY, 'LICENSE'))
     shutil.rmtree(LICENSE_DIRECTORY)
-
-    # configure self reference for role testing
-    # (see https://www.ansible.com/blog/testing-ansible-roles-with-docker)
-    if not os.path.exists(TEST_ROLE_DIRECTORY):
-        os.mkdir(TEST_ROLE_DIRECTORY)
-    if not os.path.exists(PROJECT_TEST_SYMLINK_PATH):
-        os.symlink('../../../', PROJECT_TEST_SYMLINK_PATH)
