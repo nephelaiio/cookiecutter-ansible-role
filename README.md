@@ -1,7 +1,6 @@
 cookiecutter-ansible-role
 =========================
 [![Build Status](https://github.com/nephelaiio/cookiecutter-ansible-role/workflows/CI/badge.svg)](https://github.com/nephelaiio/cookiecutter-ansible-role/actions)
-[![Build Status](https://travis-ci.org/nephelaiio/cookiecutter-ansible-role.svg?branch=master)](https://travis-ci.org/nephelaiio/cookiecutter-ansible-role.svg?branch=master)
 
 A cookiecutter template for ansible role generation
 
