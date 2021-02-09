@@ -24,7 +24,7 @@ Usage
 -----
 You may use the following procedure as a guide for creating an ansible role in the current directory
 ```
-cookiecutter gh:nephelaiio/ansible-role .
+cookiecutter gh:nephelaiio/cookiecutter-ansible-role
 ```
 
 License
