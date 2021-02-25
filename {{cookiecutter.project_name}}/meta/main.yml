@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: {{ cookiecutter.role_name }}
-  author: {{ cookiecutter.author_name }}
+  author: {{ cookiecutter.galaxy_user }}
   description: {{ cookiecutter.role_short_description }}
   license: {{ cookiecutter.license }}
   min_ansible_version: 2.2
