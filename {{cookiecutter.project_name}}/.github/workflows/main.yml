@@ -15,8 +15,29 @@ defaults:
 
 jobs:
 
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out the codebase.
+        uses: actions/checkout@v2
+        with:
+          path: '{{ cookiecutter.project_name }}'
+
+      - name: set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: install test dependencies.
+        run: pip3 install ansible-lint[community,yamllint]
+
+      - name: Lint code.
+        run: |
+          ansible-lint .
+
   molecule:
-    name: Molecule
+    name: molecule
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,20 +47,20 @@ jobs:
           - geerlingguy/docker-debian10-ansible:latest
           - geerlingguy/docker-centos7-ansible:latest
     steps:
-      - name: Check out the codebase.
+      - name: check out the codebase.
         uses: actions/checkout@v2
         with:
           path: '{{ cookiecutter.project_name }}'
 
-      - name: Set up Python 3.
+      - name: set up python 3
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
-      - name: Install test dependencies.
-        run: pip3 install ansible molecule[docker] docker pytest pytest-testinfra
+      - name: install test dependencies.
+        run: pip3 install ansible molecule[docker]
 
-      - name: Run Molecule tests.
+      - name: run Molecule tests.
         run: molecule test
         env:
           PY_COLORS: '1'
