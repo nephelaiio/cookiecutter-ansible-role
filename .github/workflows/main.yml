@@ -9,10 +9,6 @@ on:
   schedule:
     - cron: "0 5 * * 0"
 
-defaults:
-  run:
-    working-directory: cookiecutter-ansible-role
-
 jobs:
 
   pytest:
@@ -21,8 +17,6 @@ jobs:
     steps:
       - name: check out the codebase
         uses: actions/checkout@v2
-        with:
-          path: '{{ cookiecutter.project_name }}'
 
       - name: set up python 3
         uses: actions/setup-python@v2
