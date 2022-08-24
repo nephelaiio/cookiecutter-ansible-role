@@ -1,5 +1,5 @@
 ---
-name: CI
+name: Molecule
 
 on:
   pull_request:
@@ -19,20 +19,23 @@ jobs:
     name: Pytest
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
+      - name: check out the codebase
         uses: actions/checkout@v2
         with:
-          path: 'cookiecutter-ansible-role'
+          path: '{{ cookiecutter.project_name }}'
 
-      - name: Set up Python 3.
+      - name: set up python 3
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
-      - name: Install test dependencies.
-        run: pip3 install ansible molecule[docker] docker pytest pytest-testinfra
+      - name: install poetry
+        run: pip3 install poetry
 
-      - name: Run Pytest
-        run: pytest -s
+      - name: install pips
+        run: poetry install
+
+      - name: run Pytest
+        run: poetry run pytest -s
         env:
           PY_COLORS: '1'

@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "nephelaiio.cookiecutter-ansible-role"
+version = "0.1.0"
+description = ""
+authors = ["Ted Cook <teodoro.cook@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+netaddr = "^0.8.0"
+
+[tool.poetry.dev-dependencies]
+tox = "^3.25.0"
+ansible-lint = "~5"
+yamllint = "^1.27.1"
+ansible = "^6.1.0"
+MarkupSafe = "2.0.1"
+pytest = "^7.1.2"
+cookiecutter = "^2.1.1"
+molecule-docker = "^2.0.0"
+molecule = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

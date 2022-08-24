@@ -1,17 +1,23 @@
 ---
 dependency:
   name: galaxy
+  options:
+    role-file: requirements.yml
+    requirements-file: requirements.yml
 driver:
   name: docker
 platforms:
   - name: instance
-    image: geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible
+    image: "geerlingguy/docker-${MOLECULE_DOCKER_IMAGE:-ubuntu2004}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-    volume_mounts:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     pre_build_image: true
+    tmpfs:
+      - /tmp
+      - /opt
 provisioner:
   name: ansible
 verifier:
-  name: testinfra
+  name: ansible
