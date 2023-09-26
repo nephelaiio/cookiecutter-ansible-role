@@ -14,7 +14,5 @@ lint:
 test: install lint
 	poetry run molecule test -s ${MOLECULE_SCENARIO}
 
-create prepare converge side-effect verify destroy reset:
+create prepare converge side-effect verify destroy reset cleanup:
 	poetry run molecule $@ -s ${MOLECULE_SCENARIO}
-
-clean: destroy reset
