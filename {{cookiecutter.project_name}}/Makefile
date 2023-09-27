@@ -1,4 +1,4 @@
-.PHONY: install lint test converge verify clean destroy reset
+.PHONY: install lint test create prepare converge side-effect verify destroy reset clean
 
 MOLECULE_SCENARIO ?= default
 
@@ -14,16 +14,7 @@ lint:
 test: install lint
 	poetry run molecule test -s ${MOLECULE_SCENARIO}
 
-converge:
-	poetry run molecule converge -s ${MOLECULE_SCENARIO}
-
-verify:
-	poetry run molecule verify -s ${MOLECULE_SCENARIO}
+create prepare converge side-effect verify destroy reset:
+	poetry run molecule $@ -s ${MOLECULE_SCENARIO}
 
 clean: destroy reset
-
-destroy:
-	poetry run molecule destroy -s ${MOLECULE_SCENARIO}
-
-reset:
-	poetry run molecule reset -s ${MOLECULE_SCENARIO}
