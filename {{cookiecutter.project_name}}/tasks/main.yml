@@ -1,5 +1,5 @@
 ---
-- name: include variable overrides
+- name: Include variable overrides
   set_fact:
     _{{ cookiecutter.role_name | replace('-', '_') }}_package: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package | default(_{{ cookiecutter.role_name | replace('-', '_') }}_package_default | sorted_get(overrides)) {{ '}}' }}"
 {%- raw %}
@@ -14,7 +14,7 @@
   tags:
     - always
 
-- name: install {{ cookiecutter.role_name }} package
+- name: Install {{ cookiecutter.role_name }} package
   become: yes
   package:
     name: "{{ '{{' }} _{{ cookiecutter.role_name | replace('-', '_') }}_package {{ '}}' }}"

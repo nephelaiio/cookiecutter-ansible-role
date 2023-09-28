@@ -1,5 +1,5 @@
 ---
-- name: destroy
+- name: Destroy
 
   hosts: localhost
 
@@ -16,7 +16,7 @@
 
   tasks:
 
-    - name: destroy molecule instance(s)
+    - name: Destroy molecule instance(s)
       docker_container:
         name: "{{ item.name }}"
         state: absent

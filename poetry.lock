@@ -336,18 +336,6 @@ MarkupSafe = ">=2.0"
 i18n = ["Babel (>=2.7)"]
 
 [[package]]
-name = "jinja2-time"
-version = "0.2.0"
-description = "Jinja2 Extension for Dates and Times"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-arrow = "*"
-jinja2 = "*"
-
-[[package]]
 name = "jsonschema"
 version = "4.19.1"
 description = "An implementation of JSON Schema validation for Python"
@@ -884,7 +872,7 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "0cc04d995898d5ea55685b8ce6e215a5a8c613112c723e479b52d7244ffd03ea"
+content-hash = "472ab35b69f2bb9c4ccff94984641f950ba24d5718139b26773bf06850bc1aa6"
 
 [metadata.files]
 ansible = [
@@ -1150,10 +1138,6 @@ iniconfig = [
 jinja2 = [
     {file = "Jinja2-3.1.2-py3-none-any.whl", hash = "sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61"},
     {file = "Jinja2-3.1.2.tar.gz", hash = "sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"},
-]
-jinja2-time = [
-    {file = "jinja2-time-0.2.0.tar.gz", hash = "sha256:d14eaa4d315e7688daa4969f616f226614350c48730bfa1692d2caebd8c90d40"},
-    {file = "jinja2_time-0.2.0-py2.py3-none-any.whl", hash = "sha256:d3eab6605e3ec8b7a0863df09cc1d23714908fa61aa6986a845c20ba488b4efa"},
 ]
 jsonschema = [
     {file = "jsonschema-4.19.1-py3-none-any.whl", hash = "sha256:cd5f1f9ed9444e554b38ba003af06c0a8c2868131e56bfbef0550fb450c0330e"},
