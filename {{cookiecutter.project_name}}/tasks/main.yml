@@ -1,9 +1,10 @@
 ---
 - name: Include variable overrides
   set_fact:
-    _{{ cookiecutter.role_name | replace('-', '_') }}_package: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package | default(_{{ cookiecutter.role_name | replace('-', '_') }}_package_default | sorted_get(overrides)) {{ '}}' }}"
+    _{{ cookiecutter.role_name | replace('-', '_') }}_package: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package | default(_default | sorted_get(overrides)) {{ '}}' }}"
 {%- raw %}
   vars:
+    _default: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_default {{ '}}' }}"
     overrides:
       - "{{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }}"
       - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version }}"
