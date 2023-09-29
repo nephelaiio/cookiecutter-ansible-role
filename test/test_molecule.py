@@ -7,7 +7,7 @@ from cookiecutter.main import cookiecutter
 
 playbook_setup_commands = ['poetry install']
 playbook_setup_success = 0
-playbook_test_command = "poetry run molecule test"
+playbook_test_command = "make test"
 playbook_test_success = 0
 
 
