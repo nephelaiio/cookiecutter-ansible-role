@@ -3,7 +3,7 @@
   set_fact:
     _{{ cookiecutter.role_name | replace('-', '_') }}_package: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package | default(_default | sorted_get(overrides)) {{ '}}' }}"
   vars:
-    _default: "_{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_default {{ '}}' }}"
+    _default: "{{ '{{' }} _{{ cookiecutter.role_name | replace('-', '_') }}_package_default {{ '}}' }}"
 {%- raw %}
     overrides:
       - "{{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }}"
