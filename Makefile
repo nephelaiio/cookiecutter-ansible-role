@@ -10,7 +10,7 @@ install:
 	@type poetry >/dev/null || pip3 install poetry
 	@poetry install
 
-test: install
+test: install clean
 	USER_NAME=${USER_NAME} \
 	ROLE_NAME=${ROLE_NAME} \
 	poetry run pytest -s
