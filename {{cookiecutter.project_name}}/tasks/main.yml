@@ -1,6 +1,6 @@
 ---
 - name: Include variable overrides
-  set_fact:
+  ansible.builtin.set_fact:
     _{{ cookiecutter.role_name | replace('-', '_') }}_package: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package | default(_{{ cookiecutter.role_name | replace('-', '_') }}_package_default | sorted_get(overrides)) {{ '}}' }}"
 {%- raw %}
   vars:
@@ -15,7 +15,7 @@
     - always
 
 - name: Install {{ cookiecutter.role_name }} package
-  become: yes
-  package:
+  ansible.builtin.package:
     name: "{{ '{{' }} _{{ cookiecutter.role_name | replace('-', '_') }}_package {{ '}}' }}"
     state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_state {{ '}}' }}"
+  become: yes
