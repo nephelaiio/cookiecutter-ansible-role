@@ -1,21 +1,28 @@
 ---
-name: molecule
+name: lint
 
 on:
+
   pull_request:
     branches:
       - master
-  schedule:
-    - cron: "0 5 * * 0"
+
+defaults:
+
+  run:
+    working-directory: '{{ cookiecutter.project_name }}'
 
 jobs:
 
-  pytest:
-    name: Pytest
+  lint:
+
+    name: lint
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase
         uses: actions/checkout@v4
+        with:
+          path: '{{ cookiecutter.project_name }}'
 
       - name: Set up python 3
         uses: actions/setup-python@v4
@@ -25,10 +32,5 @@ jobs:
       - name: Install make
         run: sudo apt-get install -y make
 
-      - name: Install dependencies
-        run: make install
-
-      - name: Run Pytest
-        run: make test
-        env:
-          PY_COLORS: '1'
+      - name: Lint code
+        run: make lint
