@@ -11,19 +11,20 @@ test_commands = [
 
 
 @pytest.mark.parametrize('role_name', ['tree'])
-def test_role_name(role_name):
+def test_role_name(tmpdir, role_name):
     last_dir = os.path.curdir
     project_name = "nephelaiio.{0}".format(role_name)
-    test_dir = project_name
+    test_basename = project_name
+    test_dir = os.path.join(tmpdir, test_basename)
     succeeds = lambda x: x == 0
     try:
-        shutil.rmtree(test_dir, ignore_errors=True)
         cookiecutter(
                 '.',
                 no_input=True,
                 overwrite_if_exists=True,
                 extra_context={'role_name': role_name}
         )
+        os.move(test_basename, test_dir)
         os.chdir(test_dir)
         for command in test_commands:
             assert succeeds(call(command.split()))
