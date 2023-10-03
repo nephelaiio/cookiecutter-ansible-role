@@ -8,7 +8,6 @@ authors = ["Ted Cook <teodoro.cook@gmail.com>"]
 python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
-tox = "^3.25.0"
 yamllint = "^1.27.1"
 ansible = "^6.1.0"
 MarkupSafe = "2.0.1"
