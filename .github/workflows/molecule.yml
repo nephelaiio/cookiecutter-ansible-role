@@ -10,8 +10,8 @@ on:
 
 jobs:
 
-  pytest:
-    name: Pytest
+  molecule:
+    name: molecule
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase

@@ -3,3 +3,5 @@ fileignoreconfig:
     ignore_detectors: [filecontent]
   - filename: '{{cookiecutter.project_name}}/poetry.lock'
     ignore_detectors: [filecontent]
+  - filename: '{{cookiecutter.project_name}}/.github/workflows/release.yml'
+    ignore_detectors: [filecontent]

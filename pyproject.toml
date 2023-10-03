@@ -5,17 +5,16 @@ description = ""
 authors = ["Ted Cook <teodoro.cook@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
-tox = "^3.25.0"
-yamllint = "^1.27.1"
-ansible = "^6.1.0"
+yamllint = "^1.32.0"
+ansible = "^6.7.0"
 MarkupSafe = "2.0.1"
-pytest = "^7.1.2"
-cookiecutter = "^2.1.1"
-molecule-docker = "^2.0.0"
-molecule = "^4.0.1"
+pytest = "^7.4.2"
+cookiecutter = "^2.4.0"
+molecule-docker = "^2.1.0"
+molecule = "^4.0.4"
 ansible-lint = { version = "*", markers = "platform_system != 'Windows'" }
 netaddr = "^0.9.0"
 
