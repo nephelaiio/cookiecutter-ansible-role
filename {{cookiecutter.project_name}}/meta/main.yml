@@ -1,10 +1,11 @@
 ---
 galaxy_info:
+  standalone: true
   role_name: {{ cookiecutter.role_name }}
   author: {{ cookiecutter.galaxy_user }}
   description: {{ cookiecutter.role_short_description }}
   license: {{ cookiecutter.license }}
-  min_ansible_version: '2.10'
+  min_ansible_version: '2.14'
   platforms:
     - name: EL
       versions:
@@ -18,4 +19,4 @@ galaxy_info:
   galaxy_tags: {{ cookiecutter.role_name.split('-') }}
 
 dependencies:
-  - nephelaiio.plugins
+  - role: nephelaiio.plugins
