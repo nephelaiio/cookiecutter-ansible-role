@@ -1,7 +1,6 @@
 ---
 galaxy_info:
   role_name: {{ cookiecutter.role_name }}
-  namespace: {{ cookiecutter.galaxy_user }}
   author: {{ cookiecutter.galaxy_user }}
   description: {{ cookiecutter.role_short_description }}
   license: {{ cookiecutter.license }}
