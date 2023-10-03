@@ -1,6 +1,6 @@
 cookiecutter-ansible-role
 =========================
-[![Build Status](https://github.com/nephelaiio/cookiecutter-ansible-role/workflows/moleccule/badge.svg)](https://github.com/nephelaiio/cookiecutter-ansible-role/actions)
+[![Build Status](https://github.com/nephelaiio/cookiecutter-ansible-role/actions/workflows/molecule.yml/badge.svg)](https://github.com/nephelaiio/cookiecutter-ansible-role/actions/workflows/molecule.yml)
 
 A cookiecutter template for ansible role generation
 

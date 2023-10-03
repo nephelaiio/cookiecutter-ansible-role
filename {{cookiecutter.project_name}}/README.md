@@ -1,6 +1,6 @@
 # {{ cookiecutter.galaxy_user }}.{{ cookiecutter.role_name }}
 
-[![Build Status](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_name }}/workflows/molecule/badge.svg)](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_name }}/actions)
+[![Build Status](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_name }}/actions/workflows/molecule.yml/badge.svg)](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_name }}/actions/wofklows/molecule.yml)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-{{ cookiecutter.project_name }}.vim-blue.svg)](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user }}/{{ cookiecutter.role_name }}/)
 
 An [ansible role](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user }}/{{ cookiecutter.role_name }}) to install and configure {{ cookiecutter.role_name }}
