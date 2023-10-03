@@ -24,7 +24,7 @@ def test_role_name(tmpdir, role_name):
                 overwrite_if_exists=True,
                 extra_context={'role_name': role_name}
         )
-        os.move(test_basename, test_dir)
+        shutil.move(test_basename, test_dir)
         os.chdir(test_dir)
         for command in test_commands:
             assert succeeds(call(command.split()))
