@@ -3,6 +3,10 @@
 [![Build Status](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_name }}/actions/workflows/molecule.yml/badge.svg)](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_name }}/actions/wofklows/molecule.yml)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-{{ cookiecutter.project_name }}.vim-blue.svg)](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user }}/{{ cookiecutter.role_name }}/)
 
+<!--
+[![Ansible Galaxy](https://img.shields.io/badge/dynamic/json?color=blueviolet&label={{ cookiecutter.galaxy_user }}/{{ cookiecutter.role_name }}&query=%24.summary_fields.versions%5B0%5D.name&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Froles%2F<galaxy_id>%2F%3Fformat%3Djson)](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user }}/{{ cookiecutter.role_name }}/)
+ -->
+
 An [ansible role](https://galaxy.ansible.com/{{ cookiecutter.galaxy_user }}/{{ cookiecutter.role_name }}) to install and configure {{ cookiecutter.role_name }}
 
 ## Role Variables
