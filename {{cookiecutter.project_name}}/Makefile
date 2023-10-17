@@ -23,6 +23,11 @@ lint: install
 dependency create prepare converge idempotence side-effect verify destroy login reset:
 	MOLECULE_DOCKER_IMAGE=${MOLECULE_DOCKER_IMAGE} poetry run molecule $@ -s ${MOLECULE_SCENARIO}
 
+rebuild: destroy prepare create
+
+ignore:
+	poetry run ansible-lint --generate-ignore
+
 clean: destroy reset
 	poetry env remove $$(which python)
 
