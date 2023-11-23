@@ -1,6 +1,5 @@
 ---
 galaxy_info:
-  standalone: true
   role_name: {{ cookiecutter.role_name }}
   author: {{ cookiecutter.galaxy_user }}
   description: {{ cookiecutter.role_short_description }}
