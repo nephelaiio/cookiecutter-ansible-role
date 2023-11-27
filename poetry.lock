@@ -2,17 +2,17 @@
 
 [[package]]
 name = "ansible"
-version = "6.7.0"
+version = "7.7.0"
 description = "Radically simple IT automation"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "ansible-6.7.0-py3-none-any.whl", hash = "sha256:3cda6e67b1d42516f64ce376bb94c5186ff33d215d155432be5b3c2ec60bf112"},
-    {file = "ansible-6.7.0.tar.gz", hash = "sha256:c188f3ac8a8583794aadcff0bea87895ead58c19d6f244cd0c342562706e176c"},
+    {file = "ansible-7.7.0-py3-none-any.whl", hash = "sha256:4f8d346db1b6cec0f30b77935b3dce5633d76881186da839b58b34b48a089b92"},
+    {file = "ansible-7.7.0.tar.gz", hash = "sha256:9c206ba515f13a0cc9c919d496218ba26df581755bdc39be85b074066c699a02"},
 ]
 
 [package.dependencies]
-ansible-core = ">=2.13.7,<2.14.0"
+ansible-core = ">=2.14.7,<2.15.0"
 
 [[package]]
 name = "ansible-compat"
@@ -38,13 +38,13 @@ test = ["coverage", "pip-tools", "pytest (>=7.2.0)", "pytest-mock", "pytest-plus
 
 [[package]]
 name = "ansible-core"
-version = "2.13.12"
+version = "2.14.11"
 description = "Radically simple IT automation"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "ansible-core-2.13.12.tar.gz", hash = "sha256:51ce7c363e619e82e9b8cd3af72ffe75a9567a92687b9cc639dba0cfd30397f3"},
-    {file = "ansible_core-2.13.12-py3-none-any.whl", hash = "sha256:5923c586dbb92b3661aaa4d70a2ccc2216db21079c6f9b517f05f4f876934be4"},
+    {file = "ansible-core-2.14.11.tar.gz", hash = "sha256:15cbcbdfeae2073cead428f671e313f8bbc46d14549016794e1dca0f0cc09298"},
+    {file = "ansible_core-2.14.11-py3-none-any.whl", hash = "sha256:66ca75e5c43014cc8d73eb784be886e19f16175c8a2d58d2c0df9f892534951d"},
 ]
 
 [package.dependencies]
@@ -1393,4 +1393,4 @@ dev = ["doc8", "flake8", "flake8-import-order", "rstcheck[sphinx]", "sphinx"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "752ae688538e861206afc90a1aa86c7b4033c34c3b16f8b774b04c9e4f32afb1"
+content-hash = "938e566b39daf3d622a7a28bc59122ed366cd303884613846775527ce317daeb"

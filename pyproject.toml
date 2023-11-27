@@ -9,7 +9,7 @@ python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 yamllint = "^1.32.0"
-ansible = "^6.7.0"
+ansible = "^7.0.0"
 MarkupSafe = "2.0.1"
 pytest = "^7.4.2"
 cookiecutter = "^2.4.0"
