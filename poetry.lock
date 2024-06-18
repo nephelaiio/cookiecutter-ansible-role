@@ -2,49 +2,49 @@
 
 [[package]]
 name = "ansible"
-version = "8.7.0"
+version = "10.0.1"
 description = "Radically simple IT automation"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-8.7.0-py3-none-any.whl", hash = "sha256:fa7d3bc2dfdb0ab031df645814ff86b15cb5ec041bfbee4041f795abfa5646ca"},
-    {file = "ansible-8.7.0.tar.gz", hash = "sha256:3a5ca5152e4547d590e40b542d76b18dbbe2b36da4edd00a13a7c51a374ff737"},
+    {file = "ansible-10.0.1-py3-none-any.whl", hash = "sha256:3134f502173fff84f323e988ded2dc1b0bebdf08d4a9f74d582c4faea00ef03b"},
+    {file = "ansible-10.0.1.tar.gz", hash = "sha256:b2ab79d54883837f3c5b9b95fd779dff76e5fc5d9ef8555c969575ed24f9f2e1"},
 ]
 
 [package.dependencies]
-ansible-core = ">=2.15.7,<2.16.0"
+ansible-core = ">=2.17.0,<2.18.0"
 
 [[package]]
 name = "ansible-compat"
-version = "4.1.10"
+version = "24.6.1"
 description = "Ansible compatibility goodies"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "ansible-compat-4.1.10.tar.gz", hash = "sha256:2be8c7b510d2e15eed1e9ef443209d67d9aec8f427026b88936d4535ff59863d"},
-    {file = "ansible_compat-4.1.10-py3-none-any.whl", hash = "sha256:f09c3137c9f5f65d38caed44f1a1565c0e7170df720d461e76839beda6018edb"},
+    {file = "ansible_compat-24.6.1-py3-none-any.whl", hash = "sha256:1e1695454ea759b24beab7dfbeac18964553edca4a4ad0584567aa3eef491f0e"},
+    {file = "ansible_compat-24.6.1.tar.gz", hash = "sha256:f93d4c347d8e1903c292449441c09a987d70366f9cadf9afe5e32dc8a0193cac"},
 ]
 
 [package.dependencies]
-ansible-core = ">=2.12"
+ansible-core = ">=2.14"
 jsonschema = ">=4.6.0"
 packaging = "*"
 PyYAML = "*"
 subprocess-tee = ">=0.4.1"
 
 [package.extras]
-docs = ["argparse-manpage", "black", "mkdocs-ansible[lock] (>=0.1.2)"]
-test = ["coverage", "pip-tools", "pytest (>=7.2.0)", "pytest-mock", "pytest-plus"]
+docs = ["argparse-manpage", "black", "mkdocs-ansible (>=24.3.1)"]
+test = ["coverage", "pip-tools", "pytest (>=7.2.0)", "pytest-mock", "pytest-plus (>=0.6.1)"]
 
 [[package]]
 name = "ansible-core"
-version = "2.15.9"
+version = "2.17.1"
 description = "Radically simple IT automation"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-core-2.15.9.tar.gz", hash = "sha256:25f9b1b5a5af3c0986bd3928ed086eaddb867527fb5c83afef1a03cfad34f345"},
-    {file = "ansible_core-2.15.9-py3-none-any.whl", hash = "sha256:5b6a4b12aa5358f60933e79d86763e3558862282fb1dc563a29b9999e5849fc3"},
+    {file = "ansible_core-2.17.1-py3-none-any.whl", hash = "sha256:aaaccf6a9fe05968821a02079c5ec4c33a7fe5f02d9f5d94f7c3a69f71eab675"},
+    {file = "ansible_core-2.17.1.tar.gz", hash = "sha256:46449d71bbd17c3ce85fe379721d88d333fd23637b5c3798e83fae5fa38def00"},
 ]
 
 [package.dependencies]
@@ -56,35 +56,37 @@ resolvelib = ">=0.5.3,<1.1.0"
 
 [[package]]
 name = "ansible-lint"
-version = "6.20.3"
+version = "24.6.0"
 description = "Checks playbooks for practices and behavior that could potentially be improved"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-lint-6.20.3.tar.gz", hash = "sha256:7cb8efffad21cb869b0b58894e5cfe3437014ba7c61812c956c72dfebc99a0b8"},
-    {file = "ansible_lint-6.20.3-py3-none-any.whl", hash = "sha256:166b66c41212b350665e0fc35497d33a05c7b90a6ed4ab01ed0f381cdeadbbef"},
+    {file = "ansible_lint-24.6.0-py3-none-any.whl", hash = "sha256:68ddde5b19ba717b6b311d970a327c4b155e80dfa4a9291673235ee26df4db1a"},
+    {file = "ansible_lint-24.6.0.tar.gz", hash = "sha256:770dc5ac700bfc778b9effdc6d9bb20bac6c126579c2cbd5e0339fcc041f0af5"},
 ]
 
 [package.dependencies]
-ansible-compat = ">=4.1.10"
-ansible-core = ">=2.12.0"
-black = ">=22.8.0"
+ansible-compat = ">=24.5.0dev0"
+ansible-core = ">=2.13.0"
+black = ">=24.3.0"
 filelock = ">=3.3.0"
+importlib-metadata = "*"
 jsonschema = ">=4.10.0"
 packaging = ">=21.3"
 pathspec = ">=0.10.3"
 pyyaml = ">=5.4.1"
-requests = ">=2.31.0"
 rich = ">=12.0.0"
-"ruamel.yaml" = ">=0.17.0,<0.17.29 || >0.17.29,<0.17.30 || >0.17.30,<0.18"
+"ruamel.yaml" = ">=0.18.5"
 subprocess-tee = ">=0.4.1"
-wcmatch = ">=8.1.2"
+wcmatch = [
+    {version = ">=8.1.2", markers = "python_version < \"3.12\""},
+    {version = ">=8.5.0", markers = "python_version >= \"3.12\""},
+]
 yamllint = ">=1.30.0"
 
 [package.extras]
-docs = ["mkdocs-ansible[lock] (>=0.2.0)", "pipdeptree (>=2.7.1)"]
-lock = ["ansible-compat (==4.1.10)", "ansible-core (==2.15.4)", "attrs (==23.1.0)", "black (==23.9.1)", "bracex (==2.4)", "certifi (==2023.7.22)", "cffi (==1.16.0)", "charset-normalizer (==3.2.0)", "click (==8.1.7)", "cryptography (==41.0.4)", "filelock (==3.12.4)", "idna (==3.4)", "importlib-resources (==5.0.7)", "jinja2 (==3.1.2)", "jsonschema (==4.19.1)", "jsonschema-specifications (==2023.7.1)", "markdown-it-py (==3.0.0)", "markupsafe (==2.1.3)", "mdurl (==0.1.2)", "mypy-extensions (==1.0.0)", "packaging (==23.1)", "pathspec (==0.11.2)", "platformdirs (==3.10.0)", "pycparser (==2.21)", "pygments (==2.16.1)", "pyyaml (==6.0.1)", "referencing (==0.30.2)", "requests (==2.31.0)", "rich (==13.5.3)", "rpds-py (==0.10.3)", "ruamel-yaml (==0.17.33)", "subprocess-tee (==0.4.1)", "tomli (==2.0.1)", "typing-extensions (==4.8.0)", "urllib3 (==2.0.5)", "wcmatch (==8.5)", "yamllint (==1.32.0)"]
-test = ["black", "coverage-enable-subprocess", "coverage[toml] (>=6.4.4)", "jmespath", "mypy", "netaddr", "psutil", "pylint", "pytest (>=7.2.2)", "pytest-mock", "pytest-plus (>=0.2)", "pytest-xdist (>=2.1.0)", "ruamel-yaml-clib", "ruamel.yaml (>=0.17.31,<0.18)", "spdx-tools (>=0.7.1,<0.8.0)", "types-jsonschema", "types-pyyaml"]
+docs = ["mkdocs-ansible (>=0.2.0)", "pipdeptree (>=2.7.1)"]
+test = ["black", "coverage-enable-subprocess", "coverage[toml] (>=6.4.4)", "jmespath", "license-expression (>=30.3.0)", "mypy", "netaddr", "psutil", "pylint", "pytest (>=7.2.2)", "pytest-mock", "pytest-plus (>=0.6)", "pytest-xdist (>=2.1.0)", "ruamel-yaml-clib", "ruamel.yaml (>=0.17.31)", "types-jsonschema", "types-pyyaml"]
 
 [[package]]
 name = "arrow"
@@ -421,13 +423,13 @@ files = [
 
 [[package]]
 name = "cookiecutter"
-version = "2.4.0"
+version = "2.6.0"
 description = "A command-line utility that creates projects from project templates, e.g. creating a Python package project from a Python package project template."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "cookiecutter-2.4.0-py3-none-any.whl", hash = "sha256:8344663028abc08ec09b912e663636a97e1775bffe973425ec0107431acd390e"},
-    {file = "cookiecutter-2.4.0.tar.gz", hash = "sha256:6d1494e66a784f23324df9d593f3e43af3db4f4b926b9e49e6ff060169fc042a"},
+    {file = "cookiecutter-2.6.0-py3-none-any.whl", hash = "sha256:a54a8e37995e4ed963b3e82831072d1ad4b005af736bb17b99c2cbd9d41b6e2d"},
+    {file = "cookiecutter-2.6.0.tar.gz", hash = "sha256:db21f8169ea4f4fdc2408d48ca44859349de2647fbe494a9d6c3edfc0542c21c"},
 ]
 
 [package.dependencies]
@@ -495,36 +497,26 @@ test = ["certifi", "pretend", "pytest (>=6.2.0)", "pytest-benchmark", "pytest-co
 test-randomorder = ["pytest-randomly"]
 
 [[package]]
-name = "distro"
-version = "1.8.0"
-description = "Distro - an OS platform information API"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "distro-1.8.0-py3-none-any.whl", hash = "sha256:99522ca3e365cac527b44bde033f64c6945d90eb9f769703caaec52b09bbd3ff"},
-    {file = "distro-1.8.0.tar.gz", hash = "sha256:02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"},
-]
-
-[[package]]
 name = "docker"
-version = "6.1.3"
+version = "7.1.0"
 description = "A Python library for the Docker Engine API."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "docker-6.1.3-py3-none-any.whl", hash = "sha256:aecd2277b8bf8e506e484f6ab7aec39abe0038e29fa4a6d3ba86c3fe01844ed9"},
-    {file = "docker-6.1.3.tar.gz", hash = "sha256:aa6d17830045ba5ef0168d5eaa34d37beeb113948c413affe1d5991fc11f9a20"},
+    {file = "docker-7.1.0-py3-none-any.whl", hash = "sha256:c96b93b7f0a746f9e77d325bcfb87422a3d8bd4f03136ae8a85b37f1898d5fc0"},
+    {file = "docker-7.1.0.tar.gz", hash = "sha256:ad8c70e6e3f8926cb8a92619b832b4ea5299e2831c14284663184e200546fa6c"},
 ]
 
 [package.dependencies]
-packaging = ">=14.0"
 pywin32 = {version = ">=304", markers = "sys_platform == \"win32\""}
 requests = ">=2.26.0"
 urllib3 = ">=1.26.0"
-websocket-client = ">=0.32.0"
 
 [package.extras]
+dev = ["coverage (==7.2.7)", "pytest (==7.4.2)", "pytest-cov (==4.1.0)", "pytest-timeout (==2.1.0)", "ruff (==0.1.8)"]
+docs = ["myst-parser (==0.18.0)", "sphinx (==5.1.1)"]
 ssh = ["paramiko (>=2.4.3)"]
+websockets = ["websocket-client (>=1.3.0)"]
 
 [[package]]
 name = "enrich"
@@ -569,6 +561,25 @@ files = [
     {file = "idna-3.7-py3-none-any.whl", hash = "sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0"},
     {file = "idna-3.7.tar.gz", hash = "sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"},
 ]
+
+[[package]]
+name = "importlib-metadata"
+version = "7.1.0"
+description = "Read metadata from Python packages"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "importlib_metadata-7.1.0-py3-none-any.whl", hash = "sha256:30962b96c0c223483ed6cc7280e7f0199feb01a0e40cfae4d4450fc6fab1f570"},
+    {file = "importlib_metadata-7.1.0.tar.gz", hash = "sha256:b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2"},
+]
+
+[package.dependencies]
+zipp = ">=0.5"
+
+[package.extras]
+docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
+perf = ["ipython"]
+testing = ["flufl.flake8", "importlib-resources (>=1.3)", "jaraco.test (>=5.4)", "packaging", "pyfakefs", "pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy", "pytest-perf (>=0.9.2)", "pytest-ruff (>=0.2.1)"]
 
 [[package]]
 name = "iniconfig"
@@ -748,20 +759,20 @@ files = [
 
 [[package]]
 name = "molecule"
-version = "4.0.4"
+version = "24.6.0"
 description = "Molecule aids in the development and testing of Ansible roles"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.10"
 files = [
-    {file = "molecule-4.0.4-py3-none-any.whl", hash = "sha256:437a0829c3273f542e0db09516ae743607e6a2eda4d8cbdfb407edda3e0facb2"},
-    {file = "molecule-4.0.4.tar.gz", hash = "sha256:aab00c1ba62a42d77edd1a51528dfbb46abca70df7c7147fda0925ee4fe7deda"},
+    {file = "molecule-24.6.0-py3-none-any.whl", hash = "sha256:3706f1a10d010406ecba715d7ff69d34cb3ed9366cae3fddb88945b9cf230bec"},
+    {file = "molecule-24.6.0.tar.gz", hash = "sha256:8decb4c684fcafb85a7b4f038da125ed425bdd10db76bf0cdb413f9b84e41b58"},
 ]
 
 [package.dependencies]
-ansible-compat = ">=2.2.0"
+ansible-compat = ">=24.6.1"
+ansible-core = ">=2.12.10"
 click = ">=8.0,<9"
 click-help-colors = ">=0.9"
-cookiecutter = ">=1.7.3"
 enrich = ">=1.2.7"
 Jinja2 = ">=2.11.3"
 jsonschema = ">=4.9.1"
@@ -769,36 +780,33 @@ packaging = "*"
 pluggy = ">=0.7.1,<2.0"
 PyYAML = ">=5.1"
 rich = ">=9.5.1"
+wcmatch = ">=8.1.2"
 
 [package.extras]
-docker = ["molecule-docker (>=1.0.0)"]
-docs = ["Sphinx (>=5.0.0,<6.0.0)", "ansible-core (>=2.12.0)", "jinja2 (<3.2.0)", "simplejson (>=3.17.2)", "sphinx-ansible-theme (>=0.8.0,<0.10.0)", "sphinx-notfound-page (>=0.7.1)"]
-lint = ["check-jsonschema (>=0.18.3)", "flake8 (>=3.8.4)", "jsonschema (>=4.16.0)", "pre-commit (>=2.10.1)", "yamllint"]
-podman = ["molecule-podman (>=1.0.1)"]
-test = ["ansi2html (>=1.6.0)", "coverage (>=6.2)", "filelock", "pexpect (>=4.8.0,<5)", "pytest (>=6.1.2)", "pytest-cov (>=2.10.1)", "pytest-html (>=3.0.0)", "pytest-mock (>=3.3.1)", "pytest-plus (>=0.2)", "pytest-testinfra (>=6.1.0)", "pytest-xdist (>=2.1.0)"]
-windows = ["pywinrm"]
+docs = ["linkchecker (>=10.4.0)", "mkdocs-ansible (>=24.3.0)", "pipdeptree (>=2.4.0)"]
+test = ["ansi2html (>=1.8.0)", "ansible-lint (>=6.12.1)", "check-jsonschema", "coverage (>=7.0.3)", "filelock (>=3.9.0)", "pexpect (>=4.8.0,<5)", "pytest (>=7.2.0)", "pytest-mock (>=3.10.0)", "pytest-plus (>=0.4.0)", "pytest-xdist (>=3.1.0)", "requests (!=2.32.0)"]
+testinfra = ["pytest-testinfra (>=8.1.0)"]
 
 [[package]]
-name = "molecule-docker"
-version = "2.1.0"
-description = "Molecule aids in the development and testing of Ansible roles"
+name = "molecule-plugins"
+version = "23.5.3"
+description = "Molecule Plugins"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "molecule-docker-2.1.0.tar.gz", hash = "sha256:195b97673cbc2335cfa6810816de5cbf807507bf350a9d16ca98b224b1647145"},
-    {file = "molecule_docker-2.1.0-py3-none-any.whl", hash = "sha256:d439b075789be700b6594ed73f3254e2a25ed61dcf312d80ab6e718d13bf150e"},
+    {file = "molecule-plugins-23.5.3.tar.gz", hash = "sha256:a2b1437d532d736e3fbc6db7a69ec533e2334b2115ff9245a0b2772ed9738d23"},
+    {file = "molecule_plugins-23.5.3-py3-none-any.whl", hash = "sha256:87f8ac8d5e9fe1cbdfb784d92b1fd08e7cb11bf02a9391bb34dcb93fadf7a3fc"},
 ]
 
 [package.dependencies]
-docker = ">=4.3.1"
-molecule = ">=4.0.0"
-requests = "*"
-selinux = {version = "*", markers = "sys_platform == \"linux\" or sys_platform == \"linux2\""}
+molecule = ">=6.0.0a1"
 
 [package.extras]
-docs = ["Sphinx", "simplejson", "sphinx-ansible-theme (>=0.2.2)"]
-lint = ["pre-commit (>=1.21.0)"]
-test = ["molecule[test]"]
+docker = ["docker (>=4.3.1)", "requests", "selinux", "selinux"]
+openstack = ["openstacksdk (>=1.1.0)"]
+selinux = ["selinux", "selinux"]
+test = ["molecule[test] (>=6.0.0a1)", "pytest-helpers-namespace (>=2019.1.8)"]
+vagrant = ["python-vagrant"]
 
 [[package]]
 name = "mypy-extensions"
@@ -813,14 +821,17 @@ files = [
 
 [[package]]
 name = "netaddr"
-version = "0.9.0"
+version = "1.3.0"
 description = "A network address manipulation library for Python"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 files = [
-    {file = "netaddr-0.9.0-py3-none-any.whl", hash = "sha256:5148b1055679d2a1ec070c521b7db82137887fabd6d7e37f5199b44f775c3bb1"},
-    {file = "netaddr-0.9.0.tar.gz", hash = "sha256:7b46fa9b1a2d71fd5de9e4a3784ef339700a53a08c8040f08baf5f1194da0128"},
+    {file = "netaddr-1.3.0-py3-none-any.whl", hash = "sha256:c2c6a8ebe5554ce33b7d5b3a306b71bbb373e000bbbf2350dd5213cc56e3dbbe"},
+    {file = "netaddr-1.3.0.tar.gz", hash = "sha256:5c3c3d9895b551b763779ba7db7a03487dc1f8e3b385af819af341ae9ef6e48a"},
 ]
+
+[package.extras]
+nicer-shell = ["ipython"]
 
 [[package]]
 name = "packaging"
@@ -861,13 +872,13 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4)", "pytest-co
 
 [[package]]
 name = "pluggy"
-version = "1.3.0"
+version = "1.5.0"
 description = "plugin and hook calling mechanisms for python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pluggy-1.3.0-py3-none-any.whl", hash = "sha256:d89c696a773f8bd377d18e5ecda92b7a3793cbe66c87060a6fb58c7b6e1061f7"},
-    {file = "pluggy-1.3.0.tar.gz", hash = "sha256:cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"},
+    {file = "pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669"},
+    {file = "pluggy-1.5.0.tar.gz", hash = "sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"},
 ]
 
 [package.extras]
@@ -901,33 +912,33 @@ plugins = ["importlib-metadata"]
 
 [[package]]
 name = "pytest"
-version = "7.4.2"
+version = "8.2.2"
 description = "pytest: simple powerful testing with Python"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "pytest-7.4.2-py3-none-any.whl", hash = "sha256:1d881c6124e08ff0a1bb75ba3ec0bfd8b5354a01c194ddd5a0a870a48d99b002"},
-    {file = "pytest-7.4.2.tar.gz", hash = "sha256:a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069"},
+    {file = "pytest-8.2.2-py3-none-any.whl", hash = "sha256:c434598117762e2bd304e526244f67bf66bbd7b5d6cf22138be51ff661980343"},
+    {file = "pytest-8.2.2.tar.gz", hash = "sha256:de4bb8104e201939ccdc688b27a89a7be2079b22e2bd2b07f806b6ba71117977"},
 ]
 
 [package.dependencies]
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
 iniconfig = "*"
 packaging = "*"
-pluggy = ">=0.12,<2.0"
+pluggy = ">=1.5,<2.0"
 
 [package.extras]
-testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
+dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
 name = "python-dateutil"
-version = "2.8.2"
+version = "2.9.0.post0"
 description = "Extensions to the standard Python datetime module"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 files = [
-    {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
-    {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
+    {file = "python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"},
+    {file = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"},
 ]
 
 [package.dependencies]
@@ -935,13 +946,13 @@ six = ">=1.5"
 
 [[package]]
 name = "python-slugify"
-version = "8.0.1"
+version = "8.0.4"
 description = "A Python slugify application that also handles Unicode"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "python-slugify-8.0.1.tar.gz", hash = "sha256:ce0d46ddb668b3be82f4ed5e503dbc33dd815d83e2eb6824211310d3fb172a27"},
-    {file = "python_slugify-8.0.1-py2.py3-none-any.whl", hash = "sha256:70ca6ea68fe63ecc8fa4fcf00ae651fc8a5d02d93dcd12ae6d4fc7ca46c4d395"},
+    {file = "python-slugify-8.0.4.tar.gz", hash = "sha256:59202371d1d05b54a9e7720c5e038f928f45daaffe41dd10822f3907b937c856"},
+    {file = "python_slugify-8.0.4-py2.py3-none-any.whl", hash = "sha256:276540b79961052b66b7d116620b36518847f52d5fd9e3a70164fc8c50faa6b8"},
 ]
 
 [package.dependencies]
@@ -998,7 +1009,6 @@ files = [
     {file = "PyYAML-6.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:bf07ee2fef7014951eeb99f56f39c9bb4af143d8aa3c21b1677805985307da34"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:855fb52b0dc35af121542a76b9a84f8d1cd886ea97c84703eaa6d88e37a2ad28"},
     {file = "PyYAML-6.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:40df9b996c2b73138957fe23a16a4f0ba614f4c0efce1e9406a184b6d07fa3a9"},
-    {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a08c6f0fe150303c1c6b71ebcd7213c2858041a7e01975da3a99aed1e7a378ef"},
     {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0"},
     {file = "PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8d4e9c88387b0f5c7d5f281e55304de64cf7f9c0021a3525bd3b1c542da3b0e4"},
     {file = "PyYAML-6.0.1-cp312-cp312-win32.whl", hash = "sha256:d483d2cdf104e7c9fa60c544d92981f12ad66a457afae824d146093b8c294c54"},
@@ -1212,20 +1222,20 @@ files = [
 
 [[package]]
 name = "ruamel-yaml"
-version = "0.17.33"
+version = "0.18.6"
 description = "ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
 optional = false
-python-versions = ">=3"
+python-versions = ">=3.7"
 files = [
-    {file = "ruamel.yaml-0.17.33-py3-none-any.whl", hash = "sha256:2080c7a02b8a30fb3c06727cdf3e254a64055eedf3aa2d17c2b669639c04971b"},
-    {file = "ruamel.yaml-0.17.33.tar.gz", hash = "sha256:5c56aa0bff2afceaa93bffbfc78b450b7dc1e01d5edb80b3a570695286ae62b1"},
+    {file = "ruamel.yaml-0.18.6-py3-none-any.whl", hash = "sha256:57b53ba33def16c4f3d807c0ccbc00f8a6081827e81ba2491691b76882d0c636"},
+    {file = "ruamel.yaml-0.18.6.tar.gz", hash = "sha256:8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"},
 ]
 
 [package.dependencies]
-"ruamel.yaml.clib" = {version = ">=0.2.7", markers = "platform_python_implementation == \"CPython\" and python_version < \"3.12\""}
+"ruamel.yaml.clib" = {version = ">=0.2.7", markers = "platform_python_implementation == \"CPython\" and python_version < \"3.13\""}
 
 [package.extras]
-docs = ["ryd"]
+docs = ["mercurial (>5.7)", "ryd"]
 jinja2 = ["ruamel.yaml.jinja2 (>=0.2)"]
 
 [[package]]
@@ -1275,20 +1285,6 @@ files = [
 ]
 
 [[package]]
-name = "selinux"
-version = "0.3.0"
-description = "shim selinux module"
-optional = false
-python-versions = ">=3.9"
-files = [
-    {file = "selinux-0.3.0-py2.py3-none-any.whl", hash = "sha256:ecf7add45c939e9dda682c390a2cd0a845c94a4793a2cce9e8870d4ee9501f99"},
-    {file = "selinux-0.3.0.tar.gz", hash = "sha256:2a88b337ac46ad0f06f557b2806c3df62421972f766673dd8bf26732fb75a9ea"},
-]
-
-[package.dependencies]
-distro = ">=1.3.0"
-
-[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -1326,13 +1322,13 @@ files = [
 
 [[package]]
 name = "types-python-dateutil"
-version = "2.8.19.14"
+version = "2.9.0.20240316"
 description = "Typing stubs for python-dateutil"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 files = [
-    {file = "types-python-dateutil-2.8.19.14.tar.gz", hash = "sha256:1f4f10ac98bb8b16ade9dbee3518d9ace017821d94b057a425b069f834737f4b"},
-    {file = "types_python_dateutil-2.8.19.14-py3-none-any.whl", hash = "sha256:f977b8de27787639986b4e28963263fd0e5158942b3ecef91b9335c130cb1ce9"},
+    {file = "types-python-dateutil-2.9.0.20240316.tar.gz", hash = "sha256:5d2f2e240b86905e40944dd787db6da9263f0deabef1076ddaed797351ec0202"},
+    {file = "types_python_dateutil-2.9.0.20240316-py3-none-any.whl", hash = "sha256:6b8cb66d960771ce5ff974e9dd45e38facb81718cc1e208b10b1baccbfdbee3b"},
 ]
 
 [[package]]
@@ -1367,30 +1363,14 @@ files = [
 bracex = ">=2.1.1"
 
 [[package]]
-name = "websocket-client"
-version = "1.6.3"
-description = "WebSocket client for Python with low level API options"
+name = "yamllint"
+version = "1.35.1"
+description = "A linter for YAML files."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "websocket-client-1.6.3.tar.gz", hash = "sha256:3aad25d31284266bcfcfd1fd8a743f63282305a364b8d0948a43bd606acc652f"},
-    {file = "websocket_client-1.6.3-py3-none-any.whl", hash = "sha256:6cfc30d051ebabb73a5fa246efdcc14c8fbebbd0330f8984ac3bb6d9edd2ad03"},
-]
-
-[package.extras]
-docs = ["Sphinx (>=6.0)", "sphinx-rtd-theme (>=1.1.0)"]
-optional = ["python-socks", "wsaccel"]
-test = ["websockets"]
-
-[[package]]
-name = "yamllint"
-version = "1.32.0"
-description = "A linter for YAML files."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "yamllint-1.32.0-py3-none-any.whl", hash = "sha256:d97a66e48da820829d96077d76b8dfbe6c6140f106e558dae87e81ac4e6b30b7"},
-    {file = "yamllint-1.32.0.tar.gz", hash = "sha256:d01dde008c65de5b235188ab3110bebc59d18e5c65fc8a58267cd211cd9df34a"},
+    {file = "yamllint-1.35.1-py3-none-any.whl", hash = "sha256:2e16e504bb129ff515b37823b472750b36b6de07963bd74b307341ef5ad8bdc3"},
+    {file = "yamllint-1.35.1.tar.gz", hash = "sha256:7a003809f88324fd2c877734f2d575ee7881dd9043360657cc8049c809eba6cd"},
 ]
 
 [package.dependencies]
@@ -1400,7 +1380,22 @@ pyyaml = "*"
 [package.extras]
 dev = ["doc8", "flake8", "flake8-import-order", "rstcheck[sphinx]", "sphinx"]
 
+[[package]]
+name = "zipp"
+version = "3.19.2"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "zipp-3.19.2-py3-none-any.whl", hash = "sha256:f091755f667055f2d02b32c53771a7a6c8b47e1fdbc4b72a8b9072b3eef8015c"},
+    {file = "zipp-3.19.2.tar.gz", hash = "sha256:bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"},
+]
+
+[package.extras]
+doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
+test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-itertools", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy", "pytest-ruff (>=0.2.1)"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "265d8c63c37f28c161718fa9a57cc221143b1ac0ef8736318c0502eb4a0f7bda"
+content-hash = "f15f34e276ca01bf5a6fad20be73f64e2660848d2d0d6c6f3ce9a5977a24f8fe"
