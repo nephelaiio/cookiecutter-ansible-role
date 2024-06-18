@@ -20,7 +20,7 @@ jobs:
       - name: Set up python 3
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install make
         run: sudo apt-get install -y make
