@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.1/.schema/devbox.schema.json",
+  "packages": [
+    "gnumake@latest",
+    "glibcLocales@latest",
+    "python311Packages.pytest@latest",
+    "python311Packages.cookiecutter@latest",
+    "cookiecutter@latest"
+  ],
+
+  "env": {
+    "LC_ALL": "C.UTF-8"
+  },
+  "shell": {
+    "init_hook": [],
+    "scripts": {}
+  }
+}

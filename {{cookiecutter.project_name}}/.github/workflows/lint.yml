@@ -1,39 +1,35 @@
 ---
 name: lint
 
-on:
+env:
+  DEVBOX_VERSION: ${{ '{{' }} vars.DEVBOX_VERSION {{ '}}' }}
 
+defaults:
+  run:
+    working-directory: "{{ cookiecutter.project_name }}"
+
+on:
   pull_request:
     branches:
       - master
 
-defaults:
-
-  run:
-    working-directory: '{{ cookiecutter.project_name }}'
-
 jobs:
-
   lint:
-
     name: lint
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase
         uses: actions/checkout@v4
         with:
-          path: '{{ cookiecutter.project_name }}'
+          path: "nephelaiio.ubuntu_installer"
 
-      - name: Set up python 3
-        uses: actions/setup-python@v4
+      - name: Generate devbox locale
+        run: sudo locale-gen C.UTF-8
+
+      - name: Install devbox
+        uses: jetify-com/devbox-install-action@v0.12.0
         with:
-          python-version: '3.x'
-
-      - name: Update ubuntu repositories
-        run: sudo apt-get update
-
-      - name: Install make
-        run: sudo apt-get install -y make
+          project-path: "{{ cookiecutter.project_name }}"
 
       - name: Lint code
-        run: make lint
+        run: devbox run -- make lint

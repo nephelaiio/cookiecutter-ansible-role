@@ -4,3 +4,4 @@
 **/__pycache__
 nephelaiio.*
 .DS_Store
+{{cookiecutter.project_slug}}/*.lock

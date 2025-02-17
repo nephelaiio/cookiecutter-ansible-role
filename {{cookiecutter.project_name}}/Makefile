@@ -3,18 +3,20 @@
 MOLECULE_SCENARIO ?= default
 MOLECULE_DOCKER_IMAGE ?= ubuntu2004
 GALAXY_API_KEY ?=
-GITHUB_REPOSITORY ?= $$(git config --get remote.origin.url | cut -d: -f 2 | cut -d. -f 1)
+GITHUB_REPOSITORY ?= $$(git config --get remote.origin.url | cut -d':' -f 2 | cut -d. -f 1)
 GITHUB_ORG = $$(echo ${GITHUB_REPOSITORY} | cut -d/ -f 1)
 GITHUB_REPO = $$(echo ${GITHUB_REPOSITORY} | cut -d/ -f 2)
 REQUIREMENTS = requirements.yml
 
 all: install version lint test
 
-test: lint
+shell:
+	DEVBOX_USE_VERSION=0.13.1 devbox shell
+
+test: install
 	poetry run molecule test -s ${MOLECULE_SCENARIO}
 
 install:
-	@type poetry >/dev/null || pip3 install poetry
 	@poetry install --no-root
 
 lint: install
@@ -49,8 +51,8 @@ publish:
 	@poetry run ansible-galaxy role import \
 		--api-key ${GALAXY_API_KEY} ${GITHUB_ORG} ${GITHUB_REPO}
 
-version:
+version: install
 	@poetry run molecule --version
 
-debug: version
+debug: version install
 	@poetry export --dev --without-hashes
