@@ -1,7 +1,9 @@
 .PHONY: install test
 
+shell:
+	DEVBOX_USE_VERSION=0.13.1 devbox shell
+
 install:
-	@type poetry >/dev/null || pip3 install poetry
 	@poetry install --no-root
 
 test: install

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.1/.schema/devbox.schema.json",
+  "packages": [
+    "python@3.11.11",
+    "poetry@latest",
+    "gnumake@latest",
+    "glibcLocales@latest"
+  ],
+  "env": {
+    "LC_ALL": "C.UTF-8"
+  },
+  "shell": {
+    "init_hook": [],
+    "scripts": {}
+  }
+}
