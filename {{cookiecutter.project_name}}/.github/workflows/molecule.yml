@@ -1,8 +1,10 @@
 ---
 name: molecule
 
-on:
+env:
+  DEVBOX_VERSION: ${{ '{{' }} vars.DEVBOX_VERSION {{ '}}' }}
 
+on:
   pull_request:
     branches:
       - master
@@ -10,14 +12,11 @@ on:
     - cron: "0 5 * * 5"
 
 defaults:
-
   run:
-    working-directory: '{{ cookiecutter.project_name }}'
+    working-directory: "{{ cookiecutter.project_name }}"
 
 jobs:
-
   molecule:
-
     name: molecule
     runs-on: ubuntu-latest
     strategy:
@@ -37,30 +36,24 @@ jobs:
       - name: Check out the codebase
         uses: actions/checkout@v4
         with:
-          path: '{{ cookiecutter.project_name }}'
+          path: "{{ cookiecutter.project_name }}"
 
-      - name: Set up python 3
-        uses: actions/setup-python@v4
+      - name: Generate devbox locale
+        run: sudo locale-gen C.UTF-8
+
+      - name: Install devbox
+        uses: jetify-com/devbox-install-action@v0.12.0
         with:
-          python-version: '3.x'
-
-      - name: Update ubuntu repositories
-        run: sudo apt-get update
-
-      - name: Install make
-        run: sudo apt-get install -y make
-
-      - name: Install dependencies
-        run: make install
+          project-path: "{{ cookiecutter.project_name }}"
 
       - name: Debug test environment
-        run: make debug
+        run: devbox run -- make debug
 
       - name: Run molecule tests.
-        run: make test
+        run: devbox run make test
         env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
+          PY_COLORS: "1"
+          ANSIBLE_FORCE_COLOR: "1"
           MOLECULE_DOCKER_IMAGE: ${{ '{{' }} matrix.image.name {{ '}}' }}
           MOLECULE_DOCKER_COMMAND: ${{ '{{' }} matrix.image.command {{ '}}' }}
           MOLECULE_SCENARIO: ${{ '{{' }} matrix.scenario.name {{ '}}' }}

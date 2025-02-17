@@ -1,16 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.1/.schema/devbox.schema.json",
   "packages": [
-    "gnumake@latest",
+    "python@3.11.11",
+    "poetry@latest",
+    "poetryPlugins.poetry-plugin-export@latest",
     "glibcLocales@latest",
-    "python311Packages.pytest@latest",
-    "python311Packages.cookiecutter@latest",
-    "cookiecutter@latest"
+    "gnumake@latest"
   ],
-
-  "env": {
-    "LC_ALL": "C.UTF-8"
-  },
   "shell": {
     "init_hook": [],
     "scripts": {}

@@ -1,6 +1,70 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "cookiecutter@latest": {
+      "last_modified": "2025-02-07T11:26:36Z",
+      "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#cookiecutter",
+      "source": "devbox-search",
+      "version": "2.6.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s36vjvv53gm39la0c62jhz3v80gv2s46-python3.12-cookiecutter-2.6.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/p2y16a6j51a8smvnkd9fji5d4zi6bssa-python3.12-cookiecutter-2.6.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/s36vjvv53gm39la0c62jhz3v80gv2s46-python3.12-cookiecutter-2.6.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kr1k05jmj1am52vb47c8295bf1ppym39-python3.12-cookiecutter-2.6.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/03rj7mx7146vnwi3al836j5zpwqql003-python3.12-cookiecutter-2.6.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/kr1k05jmj1am52vb47c8295bf1ppym39-python3.12-cookiecutter-2.6.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/z27vmwb65478cdfaj7yy0zrq4a7agprx-python3.12-cookiecutter-2.6.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/cnij2f5hya8r0jqv3036ch8ar00n1y2c-python3.12-cookiecutter-2.6.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/z27vmwb65478cdfaj7yy0zrq4a7agprx-python3.12-cookiecutter-2.6.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4wi6g8ss57rdz1hqfilgs6gwf0kwzgim-python3.12-cookiecutter-2.6.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/43aykh36issla366qa7b57d7znw8cxd7-python3.12-cookiecutter-2.6.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/4wi6g8ss57rdz1hqfilgs6gwf0kwzgim-python3.12-cookiecutter-2.6.0"
+        }
+      }
+    },
     "glibcLocales@latest": {
       "last_modified": "2025-02-07T11:26:36Z",
       "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#glibcLocales",
@@ -121,125 +185,147 @@
         }
       }
     },
-    "poetry@latest": {
-      "last_modified": "2025-02-12T00:10:52Z",
-      "plugin_version": "0.0.4",
-      "resolved": "github:NixOS/nixpkgs/83a2581c81ff5b06f7c1a4e7cc736a455dfcf7b4#poetry",
+    "python311Packages.cookiecutter@latest": {
+      "last_modified": "2024-12-03T12:40:06Z",
+      "resolved": "github:NixOS/nixpkgs/566e53c2ad750c84f6d31f9ccb9d00f823165550#python311Packages.cookiecutter",
       "source": "devbox-search",
-      "version": "2.0.1",
+      "version": "2.6.0",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/lkg375pric4dk6zv3y41whbxlknl4wap-python3.12-poetry-2.0.1",
+              "path": "/nix/store/308srcf0q02zf1al849wahlj30f9hmbc-python3.11-cookiecutter-2.6.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/4j5hirisvs7fi93sy6v0s23b6mfsp0r9-python3.12-poetry-2.0.1-dist"
+              "path": "/nix/store/ckmzwrjm5b0fqgy6vda3kmbzjnz12y4w-python3.11-cookiecutter-2.6.0-dist"
             }
           ],
-          "store_path": "/nix/store/lkg375pric4dk6zv3y41whbxlknl4wap-python3.12-poetry-2.0.1"
+          "store_path": "/nix/store/308srcf0q02zf1al849wahlj30f9hmbc-python3.11-cookiecutter-2.6.0"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/sj7izm1f5b5cqcl3fyvfzapgdjfxczwm-python3.12-poetry-2.0.1",
+              "path": "/nix/store/rpnam6sg6sa4g9hkckj8fpsgwizfbyxg-python3.11-cookiecutter-2.6.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/rrag90s4fyv5p9l9zb91a7im2rqirxz9-python3.12-poetry-2.0.1-dist"
+              "path": "/nix/store/nba5spq6xj0jlj0rg53sbxhzxj5f1srp-python3.11-cookiecutter-2.6.0-dist"
             }
           ],
-          "store_path": "/nix/store/sj7izm1f5b5cqcl3fyvfzapgdjfxczwm-python3.12-poetry-2.0.1"
+          "store_path": "/nix/store/rpnam6sg6sa4g9hkckj8fpsgwizfbyxg-python3.11-cookiecutter-2.6.0"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/cx10pq9ld7dabfdld5cww3jwv7r9frj0-python3.12-poetry-2.0.1",
+              "path": "/nix/store/za0nwywkg8f4z3k25i2jgfdyw30mmphv-python3.11-cookiecutter-2.6.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/09f6nf6wifq67xpa3lyq1cv9c2jyanwb-python3.12-poetry-2.0.1-dist"
+              "path": "/nix/store/lyj25qb2kvbd0r2drp975x62zx9r11w2-python3.11-cookiecutter-2.6.0-dist"
             }
           ],
-          "store_path": "/nix/store/cx10pq9ld7dabfdld5cww3jwv7r9frj0-python3.12-poetry-2.0.1"
+          "store_path": "/nix/store/za0nwywkg8f4z3k25i2jgfdyw30mmphv-python3.11-cookiecutter-2.6.0"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/sp5lp24kljy38j05y7wn5iw1y5wj3r7k-python3.12-poetry-2.0.1",
+              "path": "/nix/store/h6awcqh2lvdp5yfhz2pz6z3dnlqb7vji-python3.11-cookiecutter-2.6.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/92j0i31a6qmp4p8fm6gf4kcfqdk3dk0l-python3.12-poetry-2.0.1-dist"
+              "path": "/nix/store/3g4mwn99xm8p8s8s32j7a196vy6izam7-python3.11-cookiecutter-2.6.0-dist"
             }
           ],
-          "store_path": "/nix/store/sp5lp24kljy38j05y7wn5iw1y5wj3r7k-python3.12-poetry-2.0.1"
+          "store_path": "/nix/store/h6awcqh2lvdp5yfhz2pz6z3dnlqb7vji-python3.11-cookiecutter-2.6.0"
         }
       }
     },
-    "python@3.11.11": {
-      "last_modified": "2025-02-07T11:26:36Z",
-      "plugin_version": "0.0.4",
-      "resolved": "github:NixOS/nixpkgs/d98abf5cf5914e5e4e9d57205e3af55ca90ffc1d#python311",
+    "python311Packages.pytest@latest": {
+      "last_modified": "2024-12-17T11:43:56Z",
+      "resolved": "github:NixOS/nixpkgs/4989a246d7a390a859852baddb1013f825435cee#python311Packages.pytest",
       "source": "devbox-search",
-      "version": "3.11.11",
+      "version": "8.3.3",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/p8cd5z09ranvxg3s5yapraag6m4ka4qb-python3-3.11.11",
+              "path": "/nix/store/g5gcihkyp7kpinqa729r88hszsx9s51m-python3.11-pytest-8.3.3",
               "default": true
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/kzcrazyahgdnvapss3ry8nl4nlnfding-python3.11-pytest-8.3.3-testout"
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/lkpaj7fqwpb2xy4fb3bii4802q8bvma7-python3.11-pytest-8.3.3-dist"
             }
           ],
-          "store_path": "/nix/store/p8cd5z09ranvxg3s5yapraag6m4ka4qb-python3-3.11.11"
+          "store_path": "/nix/store/g5gcihkyp7kpinqa729r88hszsx9s51m-python3.11-pytest-8.3.3"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/i7svvkm9ndrh1kwr4xhkh0df1d78fcjs-python3-3.11.11",
+              "path": "/nix/store/hnrww9wkx2jak3l1ibgq30s2kzwfmd5h-python3.11-pytest-8.3.3",
               "default": true
             },
             {
-              "name": "debug",
-              "path": "/nix/store/gwicdi09hhln3vg650zkgm9c0maci7l1-python3-3.11.11-debug"
+              "name": "dist",
+              "path": "/nix/store/6kxca3l6r7g2w19hb8w57anpbr276r3k-python3.11-pytest-8.3.3-dist"
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/wm6wgk98x0sin2abkxniakrjzl2c93p8-python3.11-pytest-8.3.3-testout"
             }
           ],
-          "store_path": "/nix/store/i7svvkm9ndrh1kwr4xhkh0df1d78fcjs-python3-3.11.11"
+          "store_path": "/nix/store/hnrww9wkx2jak3l1ibgq30s2kzwfmd5h-python3.11-pytest-8.3.3"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/sr93yld4gx5mj6zx9217q11g2hd1nzjl-python3-3.11.11",
+              "path": "/nix/store/rksdmbizhqz3vb09jwji1zcxhcfs4k3m-python3.11-pytest-8.3.3",
               "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/vm43mjipngdq1hmg4rmd8szqqdy1170v-python3.11-pytest-8.3.3-dist"
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/bp1i64yajvhk19kfnqw6jpnfgw76yz6g-python3.11-pytest-8.3.3-testout"
             }
           ],
-          "store_path": "/nix/store/sr93yld4gx5mj6zx9217q11g2hd1nzjl-python3-3.11.11"
+          "store_path": "/nix/store/rksdmbizhqz3vb09jwji1zcxhcfs4k3m-python3.11-pytest-8.3.3"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/gzl581vkwymk2iys5zz6k1k1zdf03ba1-python3-3.11.11",
+              "path": "/nix/store/b53ykpng437s20i0i51dbpppzy44j023-python3.11-pytest-8.3.3",
               "default": true
             },
             {
-              "name": "debug",
-              "path": "/nix/store/1jhiyg13j8w45ix39c687csv22shqdss-python3-3.11.11-debug"
+              "name": "dist",
+              "path": "/nix/store/mzynawgbg9dscy3sbmfvv0ip6a8cxym3-python3.11-pytest-8.3.3-dist"
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/3sjh32lhz17vr27ym92fsral9lcf7pcl-python3.11-pytest-8.3.3-testout"
             }
           ],
-          "store_path": "/nix/store/gzl581vkwymk2iys5zz6k1k1zdf03ba1-python3-3.11.11"
+          "store_path": "/nix/store/b53ykpng437s20i0i51dbpppzy44j023-python3.11-pytest-8.3.3"
         }
       }
     }
