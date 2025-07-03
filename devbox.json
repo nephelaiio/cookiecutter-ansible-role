@@ -2,10 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.1/.schema/devbox.schema.json",
   "packages": [
     "gnumake@latest",
-    "glibcLocales@latest",
     "python311Packages.pytest@latest",
     "python311Packages.cookiecutter@latest",
-    "cookiecutter@latest"
+    "cookiecutter@latest",
+    "uv@latest"
   ],
 
   "env": {

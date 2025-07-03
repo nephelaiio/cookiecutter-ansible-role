@@ -1,15 +1,11 @@
-[tool.poetry]
+[project]
 name = "nephelaiio.cookiecutter-ansible-role"
 version = "0.1.0"
 description = ""
-authors = ["Ted Cook <teodoro.cook@gmail.com>"]
+requires-python = ">=3.12"
+dependencies = []
 
-[tool.poetry.dependencies]
-python = "^3.11"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.3"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = [
+  "pytest>=8.4.1"
+]
